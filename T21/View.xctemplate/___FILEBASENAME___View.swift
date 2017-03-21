@@ -31,10 +31,12 @@ class ___FILEBASENAMEASIDENTIFIER___View: UIViewController, ___FILEBASENAMEASIDE
     //MARK: View Lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         presenter.viewWillAppear()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         presenter.viewWillDisappear()
     }
     

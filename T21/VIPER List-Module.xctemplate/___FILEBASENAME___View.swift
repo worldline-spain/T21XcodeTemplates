@@ -47,10 +47,12 @@ class ___FILEBASENAMEASIDENTIFIER___View: UIViewController, ___FILEBASENAMEASIDE
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         presenter.viewWillAppear()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         presenter.viewWillDisappear()
     }
     
