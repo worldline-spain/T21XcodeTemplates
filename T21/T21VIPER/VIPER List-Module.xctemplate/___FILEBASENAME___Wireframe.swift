@@ -11,7 +11,7 @@ import UIKit
 
 class ___FILEBASENAMEASIDENTIFIER___Wireframe
 {
-    weak var module : ___FILEBASENAMEASIDENTIFIER___ModuleRepresentation!
+    weak var module : ___FILEBASENAMEASIDENTIFIER___ModuleRepresentation?
     
     //MARK: Wireframe public
     

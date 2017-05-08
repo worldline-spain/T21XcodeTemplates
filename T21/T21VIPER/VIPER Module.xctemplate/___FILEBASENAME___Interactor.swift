@@ -22,7 +22,7 @@ protocol ___FILEBASENAMEASIDENTIFIER___InteractorHandler : class
 class ___FILEBASENAMEASIDENTIFIER___Interactor: ___FILEBASENAMEASIDENTIFIER___InteractorInterface
 {
     //MARK: VIPER relationships
-    weak var presenter : ___FILEBASENAMEASIDENTIFIER___InteractorHandler!
+    weak var presenter : ___FILEBASENAMEASIDENTIFIER___InteractorHandler?
     
     //MARK: Interactor Interface
     

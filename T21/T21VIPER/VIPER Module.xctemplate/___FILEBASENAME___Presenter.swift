@@ -12,7 +12,7 @@ import Foundation
 class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___ViewHandler, ___FILEBASENAMEASIDENTIFIER___InteractorHandler
 {
     //MARK: VIPER relationships
-    weak var view : ___FILEBASENAMEASIDENTIFIER___ViewInterface!
+    weak var view : ___FILEBASENAMEASIDENTIFIER___ViewInterface?
     var interactor : ___FILEBASENAMEASIDENTIFIER___InteractorInterface!
     var wireframe : ___FILEBASENAMEASIDENTIFIER___Wireframe!
 
