@@ -11,7 +11,7 @@
 	<key>SortOrder</key>
 	<string>10</string>
 	<key>DefaultCompletionName</key>
-	<string>MyWireframe</string>
+	<string>Wireframe</string>
 	<key>Platforms</key>
 	<array>
 		<string>com.apple.platform.iphoneos</string>

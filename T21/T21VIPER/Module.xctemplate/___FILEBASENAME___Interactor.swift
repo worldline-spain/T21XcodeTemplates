@@ -18,7 +18,7 @@ protocol ___FILEBASENAMEASIDENTIFIER___ResponseHandler: class
 // MARK: - Presenter Class must implement RequestHandler Protocol to handle Presenter Requests
 class ___FILEBASENAMEASIDENTIFIER___Interactor: ___FILEBASENAMEASIDENTIFIER___RequestHandler
 {
-    //MARK: Relationships
+    //MARK: VIPER relationships
     weak var presenter : ___FILEBASENAMEASIDENTIFIER___ResponseHandler?
     
     

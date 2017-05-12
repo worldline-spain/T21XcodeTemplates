@@ -10,28 +10,23 @@
 import Foundation
 import UIKit
 
-protocol ___FILEBASENAMEASIDENTIFIER___ModuleRepresentation : class
-{
-    func asViewController() -> UIViewController
-}
 
 class ___FILEBASENAMEASIDENTIFIER___Builder
 {
-    static func create() -> ___FILEBASENAMEASIDENTIFIER___ModuleRepresentation {
-        let vc = ___FILEBASENAMEASIDENTIFIER___View(nibName: "___FILEBASENAMEASIDENTIFIER___View", bundle: nil)
+    static func build() -> UIViewController {
+        let viewController = ___FILEBASENAMEASIDENTIFIER___ViewController(nibName: "___FILEBASENAMEASIDENTIFIER___ViewController", bundle: nil)
         let presenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
         let interactor = ___FILEBASENAMEASIDENTIFIER___Interactor()
         let wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
         
-        vc.presenter = presenter
-        presenter.view = vc
+        viewController.presenter = presenter
+        presenter.viewController = viewController
         presenter.interactor = interactor
         presenter.wireframe = wireframe
         interactor.presenter = presenter
-        wireframe.module = vc
+        wireframe.viewController = viewController
         
-        _ = vc.view //force loading the view to load the outlets
-        return vc
+        _ = viewController.view //force loading the view to load the outlets
+        return viewController
     }
-    
 }
