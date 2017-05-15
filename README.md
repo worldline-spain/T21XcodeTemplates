@@ -25,98 +25,100 @@ The available VIPER templates are:
 Creates a View swift class (representing a UIViewController) and its **.xib** file.
 
 ```swift
-protocol _NAME_ViewInterface : class
+// MARK: - Protocol to be defined at Presenter
+protocol ___FILEBASENAMEASIDENTIFIER___EventHandler:class
 {
-    //todo: add public methods from this view
+    func handleViewWillAppearEvent()
+    func handleViewWillDisappearEvent()
 }
 
-protocol _NAME_ViewHandler
+// MARK: - ViewController Class must implement ViewModelsHandler Protocol to handle ViewModel from Presenter
+class ___FILEBASENAMEASIDENTIFIER___ViewController: UIViewController, ___FILEBASENAMEASIDENTIFIER___ViewModelHandler
 {
-    //todo: add public events view handler (presenter) can receive.
-    func viewWillAppear()
-    func viewWillDisappear()
-}
-
-class _NAME_View: UIViewController, _NAME_ViewInterface, _NAME_ModuleRepresentation
-{
-    //MARK: VIPER relationships
+    //MARK: relationships
+    var presenter: ___FILEBASENAMEASIDENTIFIER___EventHandler!
     
-    var presenter: _NAME_ViewHandler!
     
     //MARK: View Lifecycle
-    
     override func viewWillAppear(_ animated: Bool) {
-        presenter.viewWillAppear()
+        super.viewWillAppear(animated)
+        presenter.handleViewWillAppearEvent()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        presenter.viewWillDisappear()
+        super.viewWillDisappear(animated)
+        presenter.handleViewWillDisappearEvent()
     }
-    
-    //MARK: Module representation
-    
-    func asViewController() -> UIViewController { return self }
-    
-    //MARK: View Interface
-    
-    
-    //MARK: View Handler
-    
-
-    //MARK: View Private
-    
 }
+
 ```
 
 ### Presenter
 
 
 ```swift
-class _NAME_Presenter: _NAME_ViewHandler, _NAME_InteractorHandler
+// MARK: - Protocol to be defined at Interactor
+protocol ___FILEBASENAMEASIDENTIFIER___RequestHandler:class
 {
-    //MARK: VIPER relationships
-    weak var view : _NAME_ViewInterface!
-    var interactor : _NAME_InteractorInterface!
-    var wireframe : _NAME_Wireframe!
-
-    //MARK: View Handler
-    
-    func viewWillAppear() {
-        //todo:
-    }
-    
-    func viewWillDisappear() {
-        //todo:
-    }
-    
-    //MARK: Interactor Handler
-    
+    // func handle______Request()
 }
+// MARK: - Protocol to be defined at ViewController
+protocol ___FILEBASENAMEASIDENTIFIER___ViewModelHandler:class
+{
+    //That part should be implemented with RxSwift.
+}
+// MARK: - Protocol to be defined at Wireframe
+protocol ___FILEBASENAMEASIDENTIFIER___NavigationHandler:class
+{
+    // Include methods to present or dismiss
+}
+
+// MARK: - Presenter Class must implement Protocols to handle ViewController Events and Interactor Responses
+class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___EventHandler, ___FILEBASENAMEASIDENTIFIER___ResponseHandler {
+    
+    //MARK: relationships
+    weak var viewController : ___FILEBASENAMEASIDENTIFIER___ViewModelHandler?
+    var interactor : ___FILEBASENAMEASIDENTIFIER___RequestHandler!
+    var wireframe : ___FILEBASENAMEASIDENTIFIER___NavigationHandler!
+    
+    //MARK: EventsHandler Protocol Implementation
+    func handleViewWillAppearEvent() {
+        
+    }
+    
+    func handleViewWillDisappearEvent() {
+        
+    }
+    
+    //MARK: ResponseHandler Protocol Implementation
+    
+    //func handle_____Response() {}
+       
+}
+
 ```
 
 ### Interactor 
 
 
 ```swift
-protocol _NAME_InteractorInterface
+// MARK: - Protocol to be defined at Presenter
+protocol ___FILEBASENAMEASIDENTIFIER___ResponseHandler: class
 {
-    //todo: add public request methods from this interactor
+    // func handle______Response()
 }
 
-protocol _NAME_InteractorHandler : class
+// MARK: - Presenter Class must implement RequestHandler Protocol to handle Presenter Requests
+class ___FILEBASENAMEASIDENTIFIER___Interactor: ___FILEBASENAMEASIDENTIFIER___RequestHandler
 {
-    //todo: add public responses for the interactor handler (presenter)
-}
+    //MARK: Relationships
+    weak var presenter : ___FILEBASENAMEASIDENTIFIER___ResponseHandler?
+    
+    
+    //MARK: RequestHandler Protocol Implementation
+    
+    //func handle_____Request() {}
 
-class _NAME_Interactor: _NAME_InteractorInterface
-{
-    //MARK: VIPER relationships
-    weak var presenter : _NAME_InteractorHandler!
-    
-    //MARK: Interactor Interface
-    
-    //MARK: Interactor Private
-    
 }
 ```
 
@@ -124,18 +126,10 @@ class _NAME_Interactor: _NAME_InteractorInterface
 
 
 ```swift
-class _NAME_Wireframe
+// MARK: - Wireframe Class must implement RequestsHandler Protocol to handle Presenter Requests
+class ___FILEBASENAMEASIDENTIFIER___Wireframe: ___FILEBASENAMEASIDENTIFIER___NavigationHandler
 {
-    weak var module : _NAME_ModuleRepresentation!
-    
-    //MARK: Wireframe public
-    
-    /*
-     //example assuming the existence of a Detail module.
-     func pushDetailModule() {
-     module.asViewController().navigationController?.pushViewController(DetailBuilder.create().asViewController(), animated: true)
-     }
-     */
+    weak var viewController : ___FILEBASENAMEASIDENTIFIER___ViewController? 
 }
 ```
 
@@ -143,30 +137,26 @@ class _NAME_Wireframe
 
 
 ```swift
-protocol _NAME_ModuleRepresentation : class
+class ___FILEBASENAMEASIDENTIFIER___Builder
 {
-    func asViewController() -> UIViewController
-}
-
-class _NAME_Builder
-{
-    static func create() -> _NAME_ModuleRepresentation {
-        let vc = _NAME_View(nibName: "_NAME_View", bundle: nil)
-        let presenter = _NAME_Presenter()
-        let interactor = _NAME_Interactor()
-        let wireframe = _NAME_Wireframe()
+    static func build() -> UIViewController {
+        let viewController = ___FILEBASENAMEASIDENTIFIER___ViewController(nibName: "___FILEBASENAMEASIDENTIFIER___ViewController", bundle: nil)
+        let presenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
+        let interactor = ___FILEBASENAMEASIDENTIFIER___Interactor()
+        let wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
         
-        vc.presenter = presenter
-        presenter.view = vc
+        viewController.presenter = presenter
+        presenter.viewController = viewController
         presenter.interactor = interactor
         presenter.wireframe = wireframe
         interactor.presenter = presenter
-        wireframe.module = vc
+        wireframe.viewController = viewController
         
-        _ = vc.view //force loading the view to load the outlets
-        return vc
+        _ = viewController.view //force loading the view to load the outlets
+        return viewController
     }
 }
+
 ```
 
 ### Module
