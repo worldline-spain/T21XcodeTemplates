@@ -5,13 +5,13 @@
 	<key>Kind</key>
 	<string>Xcode.IDEFoundation.TextSubstitutionFileTemplateKind</string>
 	<key>Description</key>
-	<string>A View class.</string>
+	<string>An entire BVIPER module.</string>
 	<key>Summary</key>
-	<string>A View class</string>
+	<string>An entire BVIPER module</string>
 	<key>SortOrder</key>
 	<string>10</string>
 	<key>DefaultCompletionName</key>
-	<string>MyView</string>
+	<string>Module</string>
 	<key>Platforms</key>
 	<array>
 		<string>com.apple.platform.iphoneos</string>
@@ -24,9 +24,9 @@
 			<key>Required</key>
 			<true/>
 			<key>Name</key>
-			<string>Class (module name): </string>
+			<string>Module name: </string>
 			<key>Description</key>
-			<string>The name of the module the View belongs to.</string>
+			<string>The name of the BVIPER module.</string>
 			<key>Type</key>
 			<string>text</string>
 			<key>NotPersisted</key>
