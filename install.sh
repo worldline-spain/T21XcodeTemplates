@@ -16,6 +16,6 @@ else
 	echo "Directory does not exists."
 fi
 
-cp -r "${TEMPLATES_DIR}" "$XCODE_USER_TEMPLATES_DIR"
+cp -R "${TEMPLATES_DIR}" "${XCODE_USER_TEMPLATES_DIR}"
 
 echo "Installation completed."
