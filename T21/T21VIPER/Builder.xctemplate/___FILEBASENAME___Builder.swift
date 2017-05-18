@@ -14,7 +14,7 @@ import UIKit
 class ___FILEBASENAMEASIDENTIFIER___Builder
 {
     static func build() -> UIViewController {
-        let viewController = ___FILEBASENAMEASIDENTIFIER___ViewController(nibName: "___FILEBASENAMEASIDENTIFIER___ViewController", bundle: nil)
+        let viewController = ___FILEBASENAMEASIDENTIFIER___ViewController(nibName:String.init(describing: ___FILEBASENAMEASIDENTIFIER___ViewController.self), bundle: nil)
         let presenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
         let interactor = ___FILEBASENAMEASIDENTIFIER___Interactor()
         let wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
