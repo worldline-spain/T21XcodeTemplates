@@ -35,8 +35,9 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___Eve
     weak var viewController : ___FILEBASENAMEASIDENTIFIER___ViewModelHandler?
     var interactor : ___FILEBASENAMEASIDENTIFIER___RequestHandler!
     var wireframe : ___FILEBASENAMEASIDENTIFIER___NavigationHandler!
+    let viewModel = ___FILEBASENAMEASIDENTIFIER___ViewModel()
     
-    //MARK: EventsHandler Protocol Implementation
+    //MARK: EventHandler Protocol Implementation
     func handleViewWillAppearEvent() {
         
     }
