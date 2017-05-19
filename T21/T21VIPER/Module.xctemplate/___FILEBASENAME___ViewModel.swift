@@ -11,5 +11,5 @@ import Foundation
 
 struct ___FILEBASENAME___ViewModel
 {
-    
+    //var title = ""
 }
