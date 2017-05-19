@@ -13,22 +13,28 @@ import Foundation
 
 
 // MARK: - Protocol to be defined at Interactor
+
 protocol ___FILEBASENAMEASIDENTIFIER___RequestHandler:class
 {
     // func handle______Request()
 }
+
 // MARK: - Protocol to be defined at ViewController
+
 protocol ___FILEBASENAMEASIDENTIFIER___ViewModelHandler:class
 {
     //That part should be implemented with RxSwift.
 }
+
 // MARK: - Protocol to be defined at Wireframe
+
 protocol ___FILEBASENAMEASIDENTIFIER___NavigationHandler:class
 {
     // Include methods to present or dismiss
 }
 
 // MARK: - Presenter Class must implement Protocols to handle ViewController Events and Interactor Responses
+
 class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___EventHandler, ___FILEBASENAMEASIDENTIFIER___ResponseHandler {
     
     //MARK: relationships

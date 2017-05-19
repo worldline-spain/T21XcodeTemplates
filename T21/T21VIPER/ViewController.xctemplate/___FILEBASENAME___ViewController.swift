@@ -34,6 +34,10 @@ class ___FILEBASENAMEASIDENTIFIER___ViewController: UIViewController, ___FILEBAS
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureBindings()
+    }
+    
+    func configureBindings() {
         //Add the ViewModel bindings here ...
     }
     
