@@ -25,16 +25,23 @@ class ___FILEBASENAMEASIDENTIFIER___View: UIViewController, ___FILEBASENAMEASIDE
     
     var presenter: ___FILEBASENAMEASIDENTIFIER___EventHandler!
     
+    var viewModel : ___FILEBASENAMEASIDENTIFIER___ViewModel {
+        get {
+            return presenter.viewModel
+        }
+    }
+    
     //MARK: View Outlets
     
     @IBOutlet
     weak var tableView: UITableView?
     
     //MARK: View Lifecycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureBindings()
+
         _ = self.tableView?.addPullToRefresh(refreshBlock: { () in
             self.presenter.viewDidPullToRefresh()
         })
@@ -50,10 +57,6 @@ class ___FILEBASENAMEASIDENTIFIER___View: UIViewController, ___FILEBASENAMEASIDE
         presenter.handleViewWillDisappearEvent()
     }
     
-    //MARK: Module representation
-    
-    func asViewController() -> UIViewController { return self }
-    
     //MARK: View Interface
     
     func animatePullToRefresh( _ show: Bool) {
@@ -63,8 +66,11 @@ class ___FILEBASENAMEASIDENTIFIER___View: UIViewController, ___FILEBASENAMEASIDE
             self.tableView?.finishPullToRefreshAnimation()
         }
     }
-    
 
     //MARK: View Private
+    
+    func configureBindings() {
+        //Add the ViewModel bindings here ...
+    }
     
 }

@@ -87,7 +87,7 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___Eve
     
     func itemsRequestStarts() {
         //todo: show loading feedback
-        self.view?.animatePullToRefresh(true)
+        self.viewController?.animatePullToRefresh(true)
     }
     
     func itemsRequestFinishes( _ result: Array<String>) {
@@ -101,7 +101,7 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___Eve
             return DataSourceItem(viewModel, viewModel.title)
         }
         self.dataSource.addItems(rows)
-        self.view?.animatePullToRefresh(false)
+        self.viewController?.animatePullToRefresh(false)
     }
     
     //MARK: Private
