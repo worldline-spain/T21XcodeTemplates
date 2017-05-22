@@ -10,13 +10,37 @@
 import Foundation
 import T21TableViewDataSource //pod 'T21TableViewDataSource'
 
-class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___ViewHandler, ___FILEBASENAMEASIDENTIFIER___InteractorHandler
+// MARK: - Protocol to be defined at Interactor
+
+protocol ___FILEBASENAMEASIDENTIFIER___RequestHandler:class
+{
+    func requestItems()
+}
+
+// MARK: - Protocol to be defined at ViewController
+
+protocol ___FILEBASENAMEASIDENTIFIER___ViewModelHandler:class
+{
+    //That part should be implemented with RxSwift.
+    func animatePullToRefresh( _ show: Bool)
+}
+
+// MARK: - Protocol to be defined at Wireframe
+
+protocol ___FILEBASENAMEASIDENTIFIER___NavigationHandler:class
+{
+    // Include methods to present or dismiss
+}
+
+class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___EventHandler, ___FILEBASENAMEASIDENTIFIER___ResponseHandler
 {
     
     //MARK: VIPER relationships
-    weak var view : ___FILEBASENAMEASIDENTIFIER___ViewInterface?
-    var interactor : ___FILEBASENAMEASIDENTIFIER___InteractorInterface!
-    var wireframe : ___FILEBASENAMEASIDENTIFIER___Wireframe!
+    weak var viewController : ___FILEBASENAMEASIDENTIFIER___ViewModelHandler?
+    var interactor : ___FILEBASENAMEASIDENTIFIER___RequestHandler!
+    var wireframe : ___FILEBASENAMEASIDENTIFIER___NavigationHandler!
+    let viewModel = ___FILEBASENAMEASIDENTIFIER___ViewModel()
+
     
     //MARK: Private Vars
     
@@ -27,25 +51,23 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___Vie
     
     init() {
         dataSource.cellForRowFunction = {(tableView,indexPath,item) in
-            let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "c")
-            let viewModel = item.value as! String
-            cell.textLabel?.text = viewModel
+            let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+            let viewModel = item.value as! ___FILEBASENAMEASIDENTIFIER___ViewModel
+            cell.textLabel?.text = viewModel.title
             return cell
         }
         
         dataSource.didSelectRowFunction = { [weak self] (tableView,indexPath,item) in
-            if let strongSelf = self {
-                let viewModel = item.value as! String
-                //strongSelf.wireframe?.pushItemDetailView(viewModel)
-                tableView.deselectRow(at: indexPath, animated: true)
-            }
+            let viewModel = item.value as! ___FILEBASENAMEASIDENTIFIER___ViewModel
+            //self?.wireframe?.pushItemDetailView()
+            tableView.deselectRow(at: indexPath, animated: true)
         }
     }
     
     
     //MARK: View Handler
     
-    func viewWillAppear() {
+    func handleViewWillAppearEvent() {
         //todo: modify the example
         if !wasShown {
             wasShown = true
@@ -53,7 +75,7 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___Vie
         }
     }
     
-    func viewWillDisappear() {
+    func handleViewWillDisappearEvent() {
         //todo:
     }
     
@@ -63,12 +85,12 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___Vie
     
     //MARK: Interactor Handler
     
-    func requestItemsDidStart() {
+    func itemsRequestStarts() {
         //todo: show loading feedback
-        self.view.animatePullToRefresh(true)
+        self.view?.animatePullToRefresh(true)
     }
     
-    func requestItemsDidFinish( _ result: Array<String>) {
+    func itemsRequestFinishes( _ result: Array<String>) {
         //todo: modify the example
         
         //map entities to view models
@@ -76,17 +98,19 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___Vie
         
         //add the view models creating DataSourceItems
         let rows = viewModels.map { (viewModel) -> DataSourceItem in
-            return DataSourceItem(viewModel, viewModel)
+            return DataSourceItem(viewModel, viewModel.title)
         }
         self.dataSource.addItems(rows)
-        self.view.animatePullToRefresh(false)
+        self.view?.animatePullToRefresh(false)
     }
     
     //MARK: Private
     
-    private func mapEntitiesToViewModels( _ items: Array<String>) -> Array<String> {
-        return items.map({ (item) -> String in
-            return "View Model: \(item)"
+    private func mapEntitiesToViewModels( _ items: Array<String>) -> Array<___FILEBASENAMEASIDENTIFIER___ViewModel> {
+        return items.map({ (entity) -> ___FILEBASENAMEASIDENTIFIER___ViewModel in
+            var vm = ___FILEBASENAMEASIDENTIFIER___ViewModel()
+            vm.title = "View Model: \(entity)"
+            return vm
         })
     }
 

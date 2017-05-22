@@ -9,23 +9,16 @@
 
 import Foundation
 
-protocol ___FILEBASENAMEASIDENTIFIER___InteractorInterface
+protocol ___FILEBASENAMEASIDENTIFIER___ResponseHandler : class
 {
-    //todo: add public request methods from this interactor
-    func requestItems()
+    func itemsRequestStarts()
+    func itemsRequestFinishes( _ result: Array<String>)
 }
 
-protocol ___FILEBASENAMEASIDENTIFIER___InteractorHandler : class
-{
-    //todo: add public responses for the interactor handler (presenter)
-    func requestItemsDidStart()
-    func requestItemsDidFinish( _ result: Array<String>)
-}
-
-class ___FILEBASENAMEASIDENTIFIER___Interactor: ___FILEBASENAMEASIDENTIFIER___InteractorInterface
+class ___FILEBASENAMEASIDENTIFIER___Interactor: ___FILEBASENAMEASIDENTIFIER___RequestHandler
 {
     //MARK: VIPER relationships
-    weak var presenter : ___FILEBASENAMEASIDENTIFIER___InteractorHandler?
+    weak var presenter : ___FILEBASENAMEASIDENTIFIER___ResponseHandler?
     
     //MARK: Private vars
     
@@ -38,11 +31,11 @@ class ___FILEBASENAMEASIDENTIFIER___Interactor: ___FILEBASENAMEASIDENTIFIER___In
         DispatchQueue.main.async {
             if !self.isRequestingItems {
                 self.isRequestingItems = true
-                self.presenter.requestItemsDidStart()
+                self.presenter?.itemsRequestStarts()
                 DispatchQueue.main.async {
-                    let result = ["Item 1","Item 2","Item 3","Item 4","Item 5"]
+                    let result = ["Entity 1","Entity 2","Entity 3","Entity 4","Entity 5"]
                     self.isRequestingItems = false
-                    self.presenter.requestItemsDidFinish(result)
+                    self.presenter?.itemsRequestFinishes(result)
                 }
             }
         }

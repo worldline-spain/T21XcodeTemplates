@@ -11,25 +11,19 @@ import Foundation
 import UIKit
 import T21PullToRefreshController // pod 'T21PullToRefreshController'
 
-protocol ___FILEBASENAMEASIDENTIFIER___ViewInterface : class
+protocol ___FILEBASENAMEASIDENTIFIER___EventHandler : class
 {
-    //todo: add public methods from this view
-    func animatePullToRefresh( _ show: Bool)
-}
-
-protocol ___FILEBASENAMEASIDENTIFIER___ViewHandler
-{
-    //todo: add public events view handler (presenter) can receive.
-    func viewWillAppear()
-    func viewWillDisappear()
+    var viewModel : ___FILEBASENAMEASIDENTIFIER___ViewModel { get }
+    func handleViewWillAppearEvent()
+    func handleViewWillDisappearEvent()
     func viewDidPullToRefresh()
 }
 
-class ___FILEBASENAMEASIDENTIFIER___View: UIViewController, ___FILEBASENAMEASIDENTIFIER___ViewInterface, ___FILEBASENAMEASIDENTIFIER___ModuleRepresentation
+class ___FILEBASENAMEASIDENTIFIER___View: UIViewController, ___FILEBASENAMEASIDENTIFIER___ViewModelHandler
 {
     //MARK: VIPER relationships
     
-    var presenter: ___FILEBASENAMEASIDENTIFIER___ViewHandler!
+    var presenter: ___FILEBASENAMEASIDENTIFIER___EventHandler!
     
     //MARK: View Outlets
     
@@ -48,12 +42,12 @@ class ___FILEBASENAMEASIDENTIFIER___View: UIViewController, ___FILEBASENAMEASIDE
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter.viewWillAppear()
+        presenter.handleViewWillAppearEvent()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        presenter.viewWillDisappear()
+        presenter.handleViewWillDisappearEvent()
     }
     
     //MARK: Module representation

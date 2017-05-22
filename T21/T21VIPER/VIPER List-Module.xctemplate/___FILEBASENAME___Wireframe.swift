@@ -6,19 +6,13 @@
 //  Copyright (c) ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.
 //
 //
-
 import UIKit
 
-class ___FILEBASENAMEASIDENTIFIER___Wireframe
+// MARK: - Wireframe Class must implement NavigationHandler Protocol to handle Presenter Navigation requests
+class ___FILEBASENAMEASIDENTIFIER___Wireframe: ___FILEBASENAMEASIDENTIFIER___NavigationHandler
 {
-    weak var module : ___FILEBASENAMEASIDENTIFIER___ModuleRepresentation?
+    weak var viewController : ___FILEBASENAMEASIDENTIFIER___View?
     
-    //MARK: Wireframe public
     
-    /*
-     //example assuming the existence of a Detail module.
-     func pushDetailModule() {
-     module.asViewController().navigationController?.pushViewController(DetailBuilder.create().asViewController(), animated: true)
-     }
-     */
+    
 }
