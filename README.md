@@ -225,7 +225,7 @@ It creates an entire VIPER module using the previous templates:
 
 ### Interaction between components
 
-####ViewController send Events to the Presenter
+#### ViewController send Events to the Presenter
 In order to handle this *__events__*, the **Presenter** must conform to the **EventsHandler** protocol.
 
 The methods defined in this protocol must be defined like:
