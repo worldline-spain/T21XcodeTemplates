@@ -234,7 +234,7 @@ The methods defined in this protocol must be defined like:
 * func **handle**ViewWillAppear()
 * func **handle**ViewDidAppear()
 
-####Presenter send Updates to View
+#### Presenter send Updates to View
 In order to handle this *__updates__*, the **View** must conform to the **ViewUpdatesHandler** protocol.
 
 The methods defined in this protocol must be defined like:
@@ -243,7 +243,7 @@ The methods defined in this protocol must be defined like:
 * func **update**SpinnerView(visible:Bool)
 
 
-####Presenter Request something to the Interactor
+#### Presenter Request something to the Interactor
 
 In order to handle this *__requests__*, the **Interactor** must conform to the **RequestsHandler** protocol.
 
@@ -252,7 +252,7 @@ The methods defined in this protocol must be defined like:
 * func **request**Something()
 * func **request**User(id:String)
 
-####Interactor Response something to the Presenter
+#### Interactor Response something to the Presenter
 
 In order to handle this *__responses__*, the **Presenter** must conform to the **ResponsesHandler** protocol.
 
