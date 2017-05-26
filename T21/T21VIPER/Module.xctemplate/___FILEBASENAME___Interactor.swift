@@ -9,21 +9,21 @@
 
 import Foundation
 
-// MARK: - Protocol to be defined at Presenter
-protocol ___FILEBASENAMEASIDENTIFIER___ResponseHandler: class
+// MARK: - Protocol to be defined at Interactor
+protocol ___FILEBASENAMEASIDENTIFIER___RequestHandler:class
 {
-    // func handle______Response()
+    // func requestSomething()
+    // func requestUser(id:String)
 }
+
 
 // MARK: - Presenter Class must implement RequestHandler Protocol to handle Presenter Requests
 class ___FILEBASENAMEASIDENTIFIER___Interactor: ___FILEBASENAMEASIDENTIFIER___RequestHandler
 {
-    //MARK: VIPER relationships
+    //MARK: Relationships
     weak var presenter : ___FILEBASENAMEASIDENTIFIER___ResponseHandler?
     
-    
-    //MARK: RequestHandler Protocol Implementation
-    
-    //func handle_____Request() {}
-
+    //MARK: RequestHandler Protocol
+    //func requestSomething(){}
 }
+

@@ -9,28 +9,24 @@
 
 import Foundation
 
-
-
-
-// MARK: - Protocol to be defined at Interactor
-
-protocol ___FILEBASENAMEASIDENTIFIER___RequestHandler:class
+// MARK: - Protocol to be defined at Presenter
+protocol ___FILEBASENAMEASIDENTIFIER___EventHandler:class
 {
-    // func handle______Request()
+    var viewModel : ___FILEBASENAMEASIDENTIFIER___ViewModel { get }
+    
+    func handleViewWillAppear()
+    func handleViewWillDisappear()
 }
 
-// MARK: - Protocol to be defined at ViewController
-
-protocol ___FILEBASENAMEASIDENTIFIER___ViewModelHandler:class
+// MARK: - Protocol to be defined at Presenter
+protocol ___FILEBASENAMEASIDENTIFIER___ResponseHandler: class
 {
-    //That part should be implemented with RxSwift.
-}
-
-// MARK: - Protocol to be defined at Wireframe
-
-protocol ___FILEBASENAMEASIDENTIFIER___NavigationHandler:class
-{
-    // Include methods to present or dismiss
+    // func somethingRequestWillStart()
+    // func somethingRequestDidStart()
+    // func somethingRequestWillProgress()
+    // func somethingRequestDidProgress()
+    // func somethingRequestWillFinish()
+    // func somethingRequestDidFinish()
 }
 
 // MARK: - Presenter Class must implement Protocols to handle ViewController Events and Interactor Responses
@@ -38,23 +34,28 @@ protocol ___FILEBASENAMEASIDENTIFIER___NavigationHandler:class
 class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___EventHandler, ___FILEBASENAMEASIDENTIFIER___ResponseHandler {
     
     //MARK: relationships
-    weak var viewController : ___FILEBASENAMEASIDENTIFIER___ViewModelHandler?
+    weak var viewController : ___FILEBASENAMEASIDENTIFIER___ViewUpdatesHandler?
     var interactor : ___FILEBASENAMEASIDENTIFIER___RequestHandler!
     var wireframe : ___FILEBASENAMEASIDENTIFIER___NavigationHandler!
-    let viewModel = ___FILEBASENAMEASIDENTIFIER___ViewModel()
+
+    var viewModel = ___FILEBASENAMEASIDENTIFIER___ViewModel()
     
-    //MARK: EventHandler Protocol Implementation
-    func handleViewWillAppearEvent() {
-        
+    //MARK: EventsHandler Protocol
+    func handleViewWillAppear() {
+        //TODO:
     }
     
-    func handleViewWillDisappearEvent() {
-        
+    func handleViewWillDisappear() {
+        //TODO:
     }
     
-    //MARK: ResponseHandler Protocol Implementation
+    //MARK: ResponseHandler Protocol
     
-    //func handle_____Response() {}
-    
-    
+    // func somethingRequestWillStart(){}
+    // func somethingRequestDidStart(){}
+    // func somethingRequestWillProgress(){}
+    // func somethingRequestDidProgress(){}
+    // func somethingRequestWillFinish(){}
+    // func somethingRequestDidFinish(){}
+
 }
