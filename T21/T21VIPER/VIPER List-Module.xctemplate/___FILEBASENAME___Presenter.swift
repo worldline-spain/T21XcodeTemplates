@@ -39,7 +39,7 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___Eve
     weak var viewController : ___FILEBASENAMEASIDENTIFIER___ViewModelHandler?
     var interactor : ___FILEBASENAMEASIDENTIFIER___RequestHandler!
     var wireframe : ___FILEBASENAMEASIDENTIFIER___NavigationHandler!
-    let viewModel = ___FILEBASENAMEASIDENTIFIER___ViewModel()
+    private(set) var viewModel = ___FILEBASENAMEASIDENTIFIER___ViewModel()
 
     
     //MARK: Private Vars
@@ -50,15 +50,27 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___Eve
     //MARK: Initializers
     
     init() {
+        
+        dataSource.onTableViewDidSetFunction = { (tableView) in
+            tableView?.rowHeight = UITableViewAutomaticDimension
+            tableView?.estimatedRowHeight = 44
+            
+            //tableView?.register(UINib.init(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "customCellIdentifier")
+        }
+        
+        dataSource.heightForRowFunction = { (tableView, indexPath, item) in
+            return UITableViewAutomaticDimension
+        }
+        
         dataSource.cellForRowFunction = {(tableView,indexPath,item) in
             let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-            let viewModel = item.value as! ___FILEBASENAMEASIDENTIFIER___ViewModel
+            let viewModel = item.value as! ___FILEBASENAMEASIDENTIFIER___CellViewModel
             cell.textLabel?.text = viewModel.title
             return cell
         }
         
         dataSource.didSelectRowFunction = { [weak self] (tableView,indexPath,item) in
-            let viewModel = item.value as! ___FILEBASENAMEASIDENTIFIER___ViewModel
+            let viewModel = item.value as! ___FILEBASENAMEASIDENTIFIER___CellViewModel
             //self?.wireframe?.pushItemDetailView()
             tableView.deselectRow(at: indexPath, animated: true)
         }
@@ -94,10 +106,10 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___Eve
         //todo: modify the example
         
         //map entities to view models
-        let viewModels = mapEntitiesToViewModels(result)
+        viewModel.items = mapEntitiesToViewModels(result)
         
         //add the view models creating DataSourceItems
-        let rows = viewModels.map { (viewModel) -> DataSourceItem in
+        let rows = viewModel.items.map { (viewModel) -> DataSourceItem in
             return DataSourceItem(viewModel, viewModel.title)
         }
         self.dataSource.addItems(rows)
@@ -106,9 +118,9 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___Eve
     
     //MARK: Private
     
-    private func mapEntitiesToViewModels( _ items: Array<String>) -> Array<___FILEBASENAMEASIDENTIFIER___ViewModel> {
-        return items.map({ (entity) -> ___FILEBASENAMEASIDENTIFIER___ViewModel in
-            var vm = ___FILEBASENAMEASIDENTIFIER___ViewModel()
+    private func mapEntitiesToViewModels( _ items: Array<String>) -> Array<___FILEBASENAMEASIDENTIFIER___CellViewModel> {
+        return items.map({ (entity) -> ___FILEBASENAMEASIDENTIFIER___CellViewModel in
+            var vm = ___FILEBASENAMEASIDENTIFIER___CellViewModel()
             vm.title = "View Model: \(entity)"
             return vm
         })

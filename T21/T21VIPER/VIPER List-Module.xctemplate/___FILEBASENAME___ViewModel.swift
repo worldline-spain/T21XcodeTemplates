@@ -11,5 +11,11 @@ import Foundation
 
 struct ___FILEBASENAME___ViewModel
 {
+    var items : [___FILEBASENAME___CellViewModel] = []
+}
+
+struct ___FILEBASENAME___CellViewModel
+{
     var title = ""
 }
+
