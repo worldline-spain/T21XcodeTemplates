@@ -9,11 +9,16 @@
 
 import Foundation
 
-protocol ___FILEBASENAMEASIDENTIFIER___ResponseHandler : class
+// MARK: - Protocol to be defined at Interactor
+
+protocol ___FILEBASENAMEASIDENTIFIER___RequestHandler:class
 {
-    func itemsRequestStarts()
-    func itemsRequestFinishes( _ result: Array<String>)
+    // func requestSomething()
+    // func requestUser(id:String)
+    
+    func requestItems()
 }
+
 
 class ___FILEBASENAMEASIDENTIFIER___Interactor: ___FILEBASENAMEASIDENTIFIER___RequestHandler
 {
@@ -31,11 +36,11 @@ class ___FILEBASENAMEASIDENTIFIER___Interactor: ___FILEBASENAMEASIDENTIFIER___Re
         DispatchQueue.main.async {
             if !self.isRequestingItems {
                 self.isRequestingItems = true
-                self.presenter?.itemsRequestStarts()
+                self.presenter?.itemsRequestDidStart()
                 DispatchQueue.main.async {
                     let result = ["Entity 1","Entity 2","Entity 3","Entity 4","Entity 5"]
                     self.isRequestingItems = false
-                    self.presenter?.itemsRequestFinishes(result)
+                    self.presenter?.itemsRequestDidFinish(result)
                 }
             }
         }

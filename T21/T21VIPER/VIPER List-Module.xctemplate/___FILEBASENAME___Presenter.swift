@@ -10,33 +10,34 @@
 import Foundation
 import T21TableViewDataSource //pod 'T21TableViewDataSource'
 
-// MARK: - Protocol to be defined at Interactor
+// MARK: - Protocols to be defined at Presenter
 
-protocol ___FILEBASENAMEASIDENTIFIER___RequestHandler:class
+protocol ___FILEBASENAMEASIDENTIFIER___EventHandler : class
 {
-    func requestItems()
+    var viewModel : ___FILEBASENAMEASIDENTIFIER___ViewModel { get }
+    func handleViewWillAppearEvent()
+    func handleViewWillDisappearEvent()
+    func viewDidPullToRefresh()
 }
 
-// MARK: - Protocol to be defined at ViewController
-
-protocol ___FILEBASENAMEASIDENTIFIER___ViewModelHandler:class
+protocol ___FILEBASENAMEASIDENTIFIER___ResponseHandler: class
 {
-    //That part should be implemented with RxSwift.
-    func animatePullToRefresh( _ show: Bool)
-}
-
-// MARK: - Protocol to be defined at Wireframe
-
-protocol ___FILEBASENAMEASIDENTIFIER___NavigationHandler:class
-{
-    // Include methods to present or dismiss
+    // func somethingRequestWillStart()
+    // func somethingRequestDidStart()
+    // func somethingRequestWillProgress()
+    // func somethingRequestDidProgress()
+    // func somethingRequestWillFinish()
+    // func somethingRequestDidFinish()
+    
+    func itemsRequestDidStart()
+    func itemsRequestDidFinish( _ result: Array<String>)
 }
 
 class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___EventHandler, ___FILEBASENAMEASIDENTIFIER___ResponseHandler
 {
     
     //MARK: VIPER relationships
-    weak var viewController : ___FILEBASENAMEASIDENTIFIER___ViewModelHandler?
+    weak var viewController : ___FILEBASENAMEASIDENTIFIER___ViewUpdatesHandler?
     var interactor : ___FILEBASENAMEASIDENTIFIER___RequestHandler!
     var wireframe : ___FILEBASENAMEASIDENTIFIER___NavigationHandler!
     private(set) var viewModel = ___FILEBASENAMEASIDENTIFIER___ViewModel()
@@ -97,12 +98,12 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___Eve
     
     //MARK: Interactor Handler
     
-    func itemsRequestStarts() {
+    func itemsRequestDidStart() {
         //todo: show loading feedback
         self.viewController?.animatePullToRefresh(true)
     }
     
-    func itemsRequestFinishes( _ result: Array<String>) {
+    func itemsRequestDidFinish( _ result: Array<String>) {
         //todo: modify the example
         
         //map entities to view models

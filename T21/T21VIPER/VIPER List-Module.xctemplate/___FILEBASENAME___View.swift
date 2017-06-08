@@ -11,24 +11,23 @@ import Foundation
 import UIKit
 import T21PullToRefreshController // pod 'T21PullToRefreshController'
 
-protocol ___FILEBASENAMEASIDENTIFIER___EventHandler : class
+// MARK: - Protocol to be defined at ViewController
+
+protocol ___FILEBASENAMEASIDENTIFIER___ViewUpdatesHandler:class
 {
-    var viewModel : ___FILEBASENAMEASIDENTIFIER___ViewModel { get }
-    func handleViewWillAppearEvent()
-    func handleViewWillDisappearEvent()
-    func viewDidPullToRefresh()
+    //That part should be implemented with RxSwift.
+    //func updateSomeView()
+    func animatePullToRefresh( _ show: Bool)
 }
 
-class ___FILEBASENAMEASIDENTIFIER___View: UIViewController, ___FILEBASENAMEASIDENTIFIER___ViewModelHandler
+class ___FILEBASENAMEASIDENTIFIER___View: UIViewController, ___FILEBASENAMEASIDENTIFIER___ViewUpdatesHandler
 {
     //MARK: VIPER relationships
     
     var presenter: ___FILEBASENAMEASIDENTIFIER___EventHandler!
     
     var viewModel : ___FILEBASENAMEASIDENTIFIER___ViewModel {
-        get {
-            return presenter.viewModel
-        }
+        return presenter.viewModel
     }
     
     //MARK: View Outlets

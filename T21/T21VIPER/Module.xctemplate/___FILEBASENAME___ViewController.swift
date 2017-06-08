@@ -24,9 +24,7 @@ class ___FILEBASENAMEASIDENTIFIER___ViewController: UIViewController, ___FILEBAS
     var presenter: ___FILEBASENAMEASIDENTIFIER___EventHandler!
     
     var viewModel : ___FILEBASENAMEASIDENTIFIER___ViewModel {
-        get {
-            return presenter.viewModel
-        }
+        return presenter.viewModel
     }
     
     //MARK: View Lifecycle
