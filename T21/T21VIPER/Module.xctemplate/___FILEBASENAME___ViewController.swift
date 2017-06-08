@@ -10,16 +10,15 @@
 import Foundation
 import UIKit
 
-// MARK: - Protocol to be defined at Presenter
-protocol ___FILEBASENAMEASIDENTIFIER___EventHandler:class
+// MARK: - Protocol to be defined at ViewController
+protocol ___FILEBASENAMEASIDENTIFIER___ViewUpdatesHandler:class
 {
-    var viewModel : ___FILEBASENAMEASIDENTIFIER___ViewModel { get }
-    func handleViewWillAppearEvent()
-    func handleViewWillDisappearEvent()
+    //That part should be implemented with RxSwift.
+    //func updateSomeView()
 }
 
 // MARK: - ViewController Class must implement ViewModelHandler Protocol to handle ViewModel from Presenter
-class ___FILEBASENAMEASIDENTIFIER___ViewController: UIViewController, ___FILEBASENAMEASIDENTIFIER___ViewModelHandler
+class ___FILEBASENAMEASIDENTIFIER___ViewController: UIViewController, ___FILEBASENAMEASIDENTIFIER___ViewUpdatesHandler
 {
     //MARK: relationships
     var presenter: ___FILEBASENAMEASIDENTIFIER___EventHandler!
@@ -31,7 +30,6 @@ class ___FILEBASENAMEASIDENTIFIER___ViewController: UIViewController, ___FILEBAS
     }
     
     //MARK: View Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureBindings()
@@ -43,11 +41,11 @@ class ___FILEBASENAMEASIDENTIFIER___ViewController: UIViewController, ___FILEBAS
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter.handleViewWillAppearEvent()
+        presenter.handleViewWillAppear()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        presenter.handleViewWillDisappearEvent()
+        presenter.handleViewWillDisappear()
     }
 }

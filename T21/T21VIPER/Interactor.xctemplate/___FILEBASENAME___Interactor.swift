@@ -9,21 +9,39 @@
 
 import Foundation
 
-// MARK: - Protocol to be defined at Presenter
-protocol ___FILEBASENAMEASIDENTIFIER___ResponseHandler: class
+protocol ___FILEBASENAMEASIDENTIFIER___ResponseHandler : class
 {
-    // func handle______Response()
+    func itemsRequestStarts()
+    func itemsRequestFinishes( _ result: Array<String>)
 }
 
-// MARK: - Presenter Class must implement RequestHandler Protocol to handle Presenter Requests
 class ___FILEBASENAMEASIDENTIFIER___Interactor: ___FILEBASENAMEASIDENTIFIER___RequestHandler
 {
-    //MARK: Relationships
+    //MARK: VIPER relationships
     weak var presenter : ___FILEBASENAMEASIDENTIFIER___ResponseHandler?
     
+    //MARK: Private vars
     
-    //MARK: RequestHandler Protocol Implementation
+    private var isRequestingItems = false
     
-    //func handle_____Request() {}
-
+    //MARK: Interactor Interface
+    
+    func requestItems() {
+        //todo: modify the example code
+        DispatchQueue.main.async {
+            if !self.isRequestingItems {
+                self.isRequestingItems = true
+                self.presenter?.itemsRequestStarts()
+                DispatchQueue.main.async {
+                    let result = ["Entity 1","Entity 2","Entity 3","Entity 4","Entity 5"]
+                    self.isRequestingItems = false
+                    self.presenter?.itemsRequestFinishes(result)
+                }
+            }
+        }
+    }
+    
+    //MARK: Interactor Private
+    
+    
 }
