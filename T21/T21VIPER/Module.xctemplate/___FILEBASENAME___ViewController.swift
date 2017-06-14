@@ -20,14 +20,14 @@ protocol ___FILEBASENAMEASIDENTIFIER___ViewUpdatesHandler:class
 // MARK: - ViewController Class must implement ViewModelHandler Protocol to handle ViewModel from Presenter
 class ___FILEBASENAMEASIDENTIFIER___ViewController: UIViewController, ___FILEBASENAMEASIDENTIFIER___ViewUpdatesHandler
 {
-    //MARK: relationships
+    //MARK: Relationships
     var presenter: ___FILEBASENAMEASIDENTIFIER___EventHandler!
     
     var viewModel : ___FILEBASENAMEASIDENTIFIER___ViewModel {
         return presenter.viewModel
     }
     
-    //MARK: View Lifecycle
+    //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureBindings()

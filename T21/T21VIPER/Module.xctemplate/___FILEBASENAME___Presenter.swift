@@ -33,14 +33,14 @@ protocol ___FILEBASENAMEASIDENTIFIER___ResponseHandler: class
 
 class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___EventHandler, ___FILEBASENAMEASIDENTIFIER___ResponseHandler {
     
-    //MARK: relationships
+    //MARK: Relationships
     weak var viewController : ___FILEBASENAMEASIDENTIFIER___ViewUpdatesHandler?
     var interactor : ___FILEBASENAMEASIDENTIFIER___RequestHandler!
     var wireframe : ___FILEBASENAMEASIDENTIFIER___NavigationHandler!
 
     var viewModel = ___FILEBASENAMEASIDENTIFIER___ViewModel()
     
-    //MARK: EventsHandler Protocol
+    //MARK: - EventsHandler Protocol
     func handleViewWillAppear() {
         //TODO:
     }
@@ -49,7 +49,7 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___Eve
         //TODO:
     }
     
-    //MARK: ResponseHandler Protocol
+    //MARK: - ResponseHandler Protocol
     
     // func somethingRequestWillStart(){}
     // func somethingRequestDidStart(){}

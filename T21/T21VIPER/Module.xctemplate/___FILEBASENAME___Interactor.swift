@@ -23,7 +23,7 @@ class ___FILEBASENAMEASIDENTIFIER___Interactor: ___FILEBASENAMEASIDENTIFIER___Re
     //MARK: Relationships
     weak var presenter : ___FILEBASENAMEASIDENTIFIER___ResponseHandler?
     
-    //MARK: RequestHandler Protocol
+    //MARK: - RequestHandler Protocol
     //func requestSomething(){}
 }
 
