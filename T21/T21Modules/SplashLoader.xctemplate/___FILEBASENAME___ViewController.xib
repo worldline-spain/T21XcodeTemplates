@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="___FILEBASENAME___ViewController" customModule="MyApp" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonRetry" destination="OPj-je-zNV" id="yGX-3e-KOb"/>
+                <outlet property="imageViewLogo" destination="WEQ-L0-zyZ" id="obW-Rx-8jE"/>
+                <outlet property="spinnerView" destination="eAb-vj-UIa" id="HX1-dK-UEf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="example_logo" translatesAutoresizingMaskIntoConstraints="NO" id="WEQ-L0-zyZ">
+                    <rect key="frame" x="137.5" y="211" width="100" height="100"/>
+                    <color key="backgroundColor" red="0.7294217932" green="0.90136075969999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="Yzb-Qy-F0Z"/>
+                        <constraint firstAttribute="width" constant="100" id="r29-Lj-NA3"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fi5-W1-yRv" userLabel="alignment view">
+                    <rect key="frame" x="182.5" y="331" width="10" height="5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="5" id="e65-XD-gRn"/>
+                        <constraint firstAttribute="width" constant="10" id="soM-mR-cij"/>
+                    </constraints>
+                </view>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="eAb-vj-UIa">
+                    <rect key="frame" x="169" y="356" width="37" height="37"/>
+                    <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPj-je-zNV">
+                    <rect key="frame" x="153.5" y="358.5" width="67" height="32"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="Try again">
+                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonRetryPressed" destination="-1" eventType="touchUpInside" id="ut0-La-gRI"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fi5-W1-yRv" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="15H-uj-Nlm"/>
+                <constraint firstItem="fi5-W1-yRv" firstAttribute="top" secondItem="WEQ-L0-zyZ" secondAttribute="bottom" constant="20" id="1cT-qS-GJk"/>
+                <constraint firstItem="eAb-vj-UIa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GY4-Xx-oce"/>
+                <constraint firstItem="OPj-je-zNV" firstAttribute="centerY" secondItem="eAb-vj-UIa" secondAttribute="centerY" id="J3U-59-gEN"/>
+                <constraint firstItem="WEQ-L0-zyZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WNo-ng-eti"/>
+                <constraint firstItem="fi5-W1-yRv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Z8y-aV-YCr"/>
+                <constraint firstItem="OPj-je-zNV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="gEM-AD-Fky"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OPj-je-zNV" secondAttribute="trailing" constant="16" id="gSn-Hr-xyh"/>
+                <constraint firstItem="eAb-vj-UIa" firstAttribute="top" secondItem="fi5-W1-yRv" secondAttribute="bottom" constant="20" id="iS1-ki-Cdc"/>
+                <constraint firstItem="OPj-je-zNV" firstAttribute="centerX" secondItem="eAb-vj-UIa" secondAttribute="centerX" id="q5T-s0-hiO"/>
+            </constraints>
+            <point key="canvasLocation" x="-282.5" y="-2.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="example_logo" width="261" height="320"/>
+    </resources>
+</document>
