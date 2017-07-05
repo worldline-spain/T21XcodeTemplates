@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="___FILEBASENAME___ViewController" customModule="MyApp" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonForgotPassword" destination="Ye1-iK-Bvq" id="jE3-qV-2ao"/>
+                <outlet property="buttonLogin" destination="y5d-cY-8dY" id="dBC-xs-9LN"/>
+                <outlet property="buttonRegister" destination="JaZ-Bq-vqp" id="Hdx-Vz-HpQ"/>
+                <outlet property="imageViewLogo" destination="JXp-4o-Lgc" id="kqt-0r-HrP"/>
+                <outlet property="scrollView" destination="345-dn-Rnb" id="6Bg-FP-ndX"/>
+                <outlet property="textFieldPassword" destination="1AU-kv-GGb" id="rvI-cA-MGQ"/>
+                <outlet property="textFieldUserName" destination="QbK-Tf-aPx" id="ktm-lu-2y5"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="658" height="696"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="345-dn-Rnb">
+                    <rect key="frame" x="0.0" y="0.0" width="658" height="696"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZS-sh-tZR">
+                            <rect key="frame" x="0.0" y="0.0" width="658" height="603"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="example_logo" translatesAutoresizingMaskIntoConstraints="NO" id="JXp-4o-Lgc">
+                                    <rect key="frame" x="279" y="30" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="RdL-qr-OCG"/>
+                                        <constraint firstAttribute="width" constant="100" id="fM9-Nw-uWm"/>
+                                    </constraints>
+                                </imageView>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QbK-Tf-aPx" customClass="T21MaterialTextField" customModule="T21MaterialTextField">
+                                    <rect key="frame" x="16" y="200" width="626" height="30"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1AU-kv-GGb" customClass="T21MaterialTextField" customModule="T21MaterialTextField">
+                                    <rect key="frame" x="16" y="290" width="626" height="30"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5d-cY-8dY" customClass="T21Button" customModule="T21Button">
+                                    <rect key="frame" x="16" y="370" width="626" height="44"/>
+                                    <color key="backgroundColor" red="1" green="0.0" blue="0.074020686490000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="WQv-Xk-1PU"/>
+                                    </constraints>
+                                    <state key="normal" title="Change in code: Button">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="buttonLoginPressed" destination="-1" eventType="touchUpInside" id="ukD-Jt-Itx"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ye1-iK-Bvq" customClass="T21Button" customModule="T21Button">
+                                    <rect key="frame" x="174" y="452" width="311" height="44"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="rfl-Rk-DqG"/>
+                                    </constraints>
+                                    <state key="normal">
+                                        <attributedString key="attributedTitle">
+                                            <fragment content="Change in code: Forgot your password">
+                                                <attributes>
+                                                    <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="18" name="Helvetica"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                    </state>
+                                    <connections>
+                                        <action selector="buttonForgotPasswordPressed" destination="-1" eventType="touchUpInside" id="7zo-Gk-t03"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JaZ-Bq-vqp" customClass="T21Button" customModule="T21Button">
+                                    <rect key="frame" x="148" y="517" width="363" height="44"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="UuU-bQ-red"/>
+                                    </constraints>
+                                    <state key="normal">
+                                        <attributedString key="attributedTitle">
+                                            <fragment content="Change in code">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="18" name="Helvetica"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=": ___FILEBASENAME___? Create a ___FILEBASENAME___ account">
+                                                <attributes>
+                                                    <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="18" name="Helvetica"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                    </state>
+                                    <connections>
+                                        <action selector="buttonRegisterPressed" destination="-1" eventType="touchUpInside" id="2os-Hq-umY"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="1AU-kv-GGb" firstAttribute="width" secondItem="QbK-Tf-aPx" secondAttribute="width" id="2pg-Fy-EoL"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JaZ-Bq-vqp" secondAttribute="trailing" constant="16" id="4iO-bi-aiX"/>
+                                <constraint firstItem="Ye1-iK-Bvq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZZS-sh-tZR" secondAttribute="leading" constant="16" id="9bY-Ku-B65"/>
+                                <constraint firstItem="1AU-kv-GGb" firstAttribute="top" secondItem="QbK-Tf-aPx" secondAttribute="bottom" constant="60" id="9uh-w4-FxC"/>
+                                <constraint firstItem="JaZ-Bq-vqp" firstAttribute="centerX" secondItem="ZZS-sh-tZR" secondAttribute="centerX" id="CGZ-vV-41t"/>
+                                <constraint firstItem="y5d-cY-8dY" firstAttribute="centerX" secondItem="ZZS-sh-tZR" secondAttribute="centerX" id="Cg2-dg-Rt4"/>
+                                <constraint firstItem="Ye1-iK-Bvq" firstAttribute="top" secondItem="y5d-cY-8dY" secondAttribute="bottom" constant="38" id="ELr-6g-4v1"/>
+                                <constraint firstItem="1AU-kv-GGb" firstAttribute="centerX" secondItem="ZZS-sh-tZR" secondAttribute="centerX" id="EOr-8K-bat"/>
+                                <constraint firstAttribute="trailing" secondItem="QbK-Tf-aPx" secondAttribute="trailing" constant="16" id="G91-qv-Kz6"/>
+                                <constraint firstItem="y5d-cY-8dY" firstAttribute="width" secondItem="1AU-kv-GGb" secondAttribute="width" id="IQc-ww-1ns"/>
+                                <constraint firstAttribute="bottom" secondItem="JXp-4o-Lgc" secondAttribute="bottom" constant="473" id="JVt-lf-UgI"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ye1-iK-Bvq" secondAttribute="trailing" constant="16" id="MI6-DI-b23"/>
+                                <constraint firstItem="QbK-Tf-aPx" firstAttribute="top" secondItem="JXp-4o-Lgc" secondAttribute="bottom" constant="70" id="OE5-94-ef4"/>
+                                <constraint firstItem="JXp-4o-Lgc" firstAttribute="centerX" secondItem="ZZS-sh-tZR" secondAttribute="centerX" id="SgC-5A-Tfs"/>
+                                <constraint firstItem="y5d-cY-8dY" firstAttribute="top" secondItem="1AU-kv-GGb" secondAttribute="bottom" constant="50" id="XJ9-Rw-tT0"/>
+                                <constraint firstItem="JaZ-Bq-vqp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZZS-sh-tZR" secondAttribute="leading" constant="16" id="dF0-eL-Pa9"/>
+                                <constraint firstItem="JXp-4o-Lgc" firstAttribute="top" secondItem="ZZS-sh-tZR" secondAttribute="top" constant="30" id="kiJ-Pj-Rev"/>
+                                <constraint firstItem="QbK-Tf-aPx" firstAttribute="leading" secondItem="ZZS-sh-tZR" secondAttribute="leading" constant="16" id="qJd-at-0zq"/>
+                                <constraint firstItem="JaZ-Bq-vqp" firstAttribute="top" secondItem="Ye1-iK-Bvq" secondAttribute="bottom" constant="21" id="qSC-te-u9y"/>
+                                <constraint firstItem="Ye1-iK-Bvq" firstAttribute="centerX" secondItem="ZZS-sh-tZR" secondAttribute="centerX" id="yGu-te-6Pd"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="ZZS-sh-tZR" firstAttribute="leading" secondItem="345-dn-Rnb" secondAttribute="leading" id="HYz-tA-nJE"/>
+                        <constraint firstItem="ZZS-sh-tZR" firstAttribute="top" secondItem="345-dn-Rnb" secondAttribute="top" id="K87-fE-mor"/>
+                        <constraint firstItem="ZZS-sh-tZR" firstAttribute="width" secondItem="345-dn-Rnb" secondAttribute="width" id="QoY-Ud-YoF"/>
+                        <constraint firstAttribute="trailing" secondItem="ZZS-sh-tZR" secondAttribute="trailing" id="UM3-t6-uk7"/>
+                        <constraint firstAttribute="bottom" secondItem="ZZS-sh-tZR" secondAttribute="bottom" constant="64" id="xyG-KD-Agq"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="345-dn-Rnb" secondAttribute="trailing" id="4es-K7-nZ7"/>
+                <constraint firstAttribute="bottom" secondItem="345-dn-Rnb" secondAttribute="bottom" id="C3k-6x-Bwv"/>
+                <constraint firstItem="345-dn-Rnb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="emG-7S-hNJ"/>
+                <constraint firstItem="345-dn-Rnb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="w9Z-Hn-D0y"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="06p-7u-Efe" appends="YES" id="Mzx-6n-oOe"/>
+            </connections>
+            <point key="canvasLocation" x="-69" y="49"/>
+        </view>
+        <tapGestureRecognizer id="06p-7u-Efe">
+            <connections>
+                <action selector="tapGestureRecognizedWithRecognizer:" destination="-1" id="yel-Mz-B9x"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="example_logo" width="261" height="320"/>
+    </resources>
+</document>
