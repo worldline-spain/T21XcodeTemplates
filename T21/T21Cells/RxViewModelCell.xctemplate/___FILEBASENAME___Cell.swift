@@ -11,14 +11,13 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ___FILEBASENAME___Cell: UITableViewCell {
+class ___VARIABLE_productName:identifier___Cell: UITableViewCell {
     
     private(set) var disposeBag = DisposeBag()
     
-    var viewModel = ___FILEBASENAME___CellViewModel() {
+    var viewModel = ___VARIABLE_productName:identifier___CellViewModel() {
         didSet {
             disposeBag = DisposeBag()
-            
             //Create ViewModel bindings here...
         }
     }
@@ -30,7 +29,6 @@ class ___FILEBASENAME___Cell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     

@@ -11,16 +11,15 @@ import Foundation
 import T21TableViewDataSource //pod 'T21TableViewDataSource'
 
 // MARK: - Protocols to be defined at Presenter
-
-protocol ___FILEBASENAMEASIDENTIFIER___EventHandler : class
+protocol ___VARIABLE_productName:identifier___EventHandler: class
 {
-    var viewModel : ___FILEBASENAMEASIDENTIFIER___ViewModel { get }
+    var viewModel: ___VARIABLE_productName:identifier___ViewModel { get }
     func handleViewWillAppearEvent()
     func handleViewWillDisappearEvent()
     func viewDidPullToRefresh()
 }
 
-protocol ___FILEBASENAMEASIDENTIFIER___ResponseHandler: class
+protocol ___VARIABLE_productName:identifier___ResponseHandler: class
 {
     // func somethingRequestWillStart()
     // func somethingRequestDidStart()
@@ -33,18 +32,16 @@ protocol ___FILEBASENAMEASIDENTIFIER___ResponseHandler: class
     func itemsRequestDidFinish( _ result: Array<String>)
 }
 
-class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___EventHandler, ___FILEBASENAMEASIDENTIFIER___ResponseHandler
+class ___VARIABLE_productName:identifier___Presenter: ___VARIABLE_productName:identifier___EventHandler, ___VARIABLE_productName:identifier___ResponseHandler
 {
     
     //MARK: VIPER relationships
-    weak var viewController : ___FILEBASENAMEASIDENTIFIER___ViewUpdatesHandler?
-    var interactor : ___FILEBASENAMEASIDENTIFIER___RequestHandler!
-    var wireframe : ___FILEBASENAMEASIDENTIFIER___NavigationHandler!
-    private(set) var viewModel = ___FILEBASENAMEASIDENTIFIER___ViewModel()
+    weak var viewController: ___VARIABLE_productName:identifier___ViewUpdatesHandler?
+    var interactor: ___VARIABLE_productName:identifier___RequestHandler!
+    var wireframe: ___VARIABLE_productName:identifier___NavigationHandler!
+    private(set) var viewModel = ___VARIABLE_productName:identifier___ViewModel()
 
-    
     //MARK: Private Vars
-    
     var dataSource = TableViewDataSource<DataSourceItem>()
     private var wasShown = false
 
@@ -65,13 +62,13 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___Eve
         
         dataSource.cellForRowFunction = {(tableView,indexPath,item) in
             let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-            let viewModel = item.value as! ___FILEBASENAMEASIDENTIFIER___CellViewModel
+            let viewModel = item.value as! ___VARIABLE_productName:identifier___CellViewModel
             cell.textLabel?.text = viewModel.title
             return cell
         }
         
         dataSource.didSelectRowFunction = { [weak self] (tableView,indexPath,item) in
-            let viewModel = item.value as! ___FILEBASENAMEASIDENTIFIER___CellViewModel
+            let viewModel = item.value as! ___VARIABLE_productName:identifier___CellViewModel
             //self?.wireframe?.pushItemDetailView()
             tableView.deselectRow(at: indexPath, animated: true)
         }
@@ -119,9 +116,9 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___Eve
     
     //MARK: Private
     
-    private func mapEntitiesToViewModels( _ items: Array<String>) -> Array<___FILEBASENAMEASIDENTIFIER___CellViewModel> {
-        return items.map({ (entity) -> ___FILEBASENAMEASIDENTIFIER___CellViewModel in
-            var vm = ___FILEBASENAMEASIDENTIFIER___CellViewModel()
+    private func mapEntitiesToViewModels( _ items: Array<String>) -> Array<___VARIABLE_productName:identifier___CellViewModel> {
+        return items.map({ (entity) -> ___VARIABLE_productName:identifier___CellViewModel in
+            var vm = ___VARIABLE_productName:identifier___CellViewModel()
             vm.title = "View Model: \(entity)"
             return vm
         })

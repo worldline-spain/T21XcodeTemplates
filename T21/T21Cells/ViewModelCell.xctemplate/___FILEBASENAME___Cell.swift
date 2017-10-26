@@ -9,9 +9,9 @@
 
 import UIKit
 
-class ___FILEBASENAME___Cell: UITableViewCell {
+class ___VARIABLE_productName:identifier___Cell: UITableViewCell {
     
-    var viewModel = ___FILEBASENAME___CellViewModel() {
+    var viewModel = ___VARIABLE_productName:identifier___CellViewModel() {
         didSet {
 
         }
@@ -24,7 +24,6 @@ class ___FILEBASENAME___Cell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     

@@ -2,35 +2,47 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Kind</key>
-	<string>Xcode.IDEFoundation.TextSubstitutionFileTemplateKind</string>
-	<key>Description</key>
-	<string>A ViewModelCollectionCell</string>
-	<key>Summary</key>
-	<string>A ViewModelCollectionCell</string>
-	<key>SortOrder</key>
-	<string>10</string>
-	<key>DefaultCompletionName</key>
-	<string>ViewModelCollectionCell</string>
+	<key>AllowedTypes</key>
+	<array>
+		<string>public.swift-source</string>
+	</array>
 	<key>Platforms</key>
 	<array>
 		<string>com.apple.platform.iphoneos</string>
 	</array>
+	<key>DefaultCompletionName</key>
+	<string>ViewModelCollectionCell</string>
+	<key>Description</key>
+	<string>A ViewModelCollectionCell</string>
+	<key>Kind</key>
+	<string>Xcode.IDEFoundation.TextSubstitutionFileTemplateKind</string>
+	<key>MainTemplateFile</key>
+	<string>___FILEBASENAME___</string>
+	<key>SortOrder</key>
+	<string>10</string>
 	<key>Options</key>
 	<array>
 		<dict>
-			<key>Identifier</key>
-			<string>productName</string>
-			<key>Required</key>
-			<true/>
-			<key>Name</key>
-			<string>ViewModelCollectionCell prefix: </string>
 			<key>Description</key>
 			<string>The name of the ViewModelCollectionCell.</string>
+			<key>Default</key>
+			<string></string>
+			<key>Identifier</key>
+			<string>moduleName</string>
+			<key>Name</key>
+			<string>ViewModelCollectionCell prefix: </string>
+			<key>Required</key>
+			<true/>
 			<key>Type</key>
 			<string>text</string>
-			<key>NotPersisted</key>
-			<true/>
+		</dict>
+		<dict>
+			<key>Default</key>
+			<string>___VARIABLE_moduleName___</string>
+			<key>Identifier</key>
+			<string>productName</string>
+			<key>Type</key>
+			<string>static</string>
 		</dict>
 	</array>
 </dict>

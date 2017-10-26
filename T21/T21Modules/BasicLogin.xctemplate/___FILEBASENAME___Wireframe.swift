@@ -1,22 +1,22 @@
 //
-//  ___FILEBASENAME___Wireframe.swift
-//  MyApp
+//  ___FILENAME___
+//  ___PROJECTNAME___
 //
-//  Created by Eloi Guzmán Cerón on 05/07/2017.
-//  Copyright (c) 2017 Worldline. All rights reserved.
+//  Created by ___FULLUSERNAME___ on ___DATE___.
+//  Copyright (c) ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.
 //
 //
 
 import UIKit
 
 // MARK: - Protocol to be defined at Wireframe
-protocol ___FILEBASENAME___NavigationHandler:class
+protocol ___VARIABLE_productName:identifier___NavigationHandler: class
 {
     // Include methods to present or dismiss
 }
 
 // MARK: - Wireframe Class must implement NavigationHandler Protocol to handle Presenter Navigation calls
-class ___FILEBASENAME___Wireframe: ___FILEBASENAME___NavigationHandler
+class ___VARIABLE_productName:identifier___Wireframe: ___VARIABLE_productName:identifier___NavigationHandler
 {
-    weak var viewController : ___FILEBASENAME___ViewController?
+    weak var viewController: ___VARIABLE_productName:identifier___ViewController?
 }

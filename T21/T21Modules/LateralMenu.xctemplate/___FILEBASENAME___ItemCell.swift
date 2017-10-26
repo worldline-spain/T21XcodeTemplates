@@ -9,12 +9,12 @@
 
 import UIKit
 
-class ___FILEBASENAME___ItemCell: UITableViewCell {
+class ___VARIABLE_productName:identifier___ItemCell: UITableViewCell {
     
-    @IBOutlet weak var labelTitle : UILabel?
-    @IBOutlet weak var itemImageView : UIImageView?
+    @IBOutlet weak var labelTitle: UILabel?
+    @IBOutlet weak var itemImageView: UIImageView?
     
-    var viewModel = ___FILEBASENAME___ItemCellViewModel() {
+    var viewModel = ___VARIABLE_productName:identifier___ItemCellViewModel() {
         didSet {
             labelTitle?.text = viewModel.title
         }

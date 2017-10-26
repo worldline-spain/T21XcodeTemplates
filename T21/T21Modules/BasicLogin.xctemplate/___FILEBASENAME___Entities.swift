@@ -1,14 +1,15 @@
 //
-//  ___FILEBASENAME___Entities.swift
-//  MyApp
+//  ___FILENAME___
+//  ___PROJECTNAME___
 //
-//  Created by Eloi Guzmán Cerón on 05/07/2017.
-//  Copyright © 2017 Worldline. All rights reserved.
+//  Created by ___FULLUSERNAME___ on ___DATE___.
+//  Copyright (c) ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.
+//
 //
 
 import Foundation
 
-public enum Do___FILEBASENAME___Entity {
+public enum Do___VARIABLE_productName:identifier___Entity {
     case success
     case connectionError
     case invalidCredentials

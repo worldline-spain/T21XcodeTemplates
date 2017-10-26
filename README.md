@@ -35,19 +35,19 @@ Creates a ViewController swift class (representing a UIViewController) and its *
 ```swift
 
 // MARK: - Protocol to be defined at ViewController
-protocol ___FILEBASENAMEASIDENTIFIER___ViewUpdatesHandler:class
+protocol ___VARIABLE_productName:identifier___ViewUpdatesHandler: class
 {
     //That part should be implemented with RxSwift.
     //func updateSomeView()
 }
 
 // MARK: - ViewController Class must implement ViewModelHandler Protocol to handle ViewModel from Presenter
-class ___FILEBASENAMEASIDENTIFIER___ViewController: UIViewController, ___FILEBASENAMEASIDENTIFIER___ViewUpdatesHandler
+class ___VARIABLE_productName:identifier___ViewController: UIViewController, ___VARIABLE_productName:identifier___ViewUpdatesHandler
 {
     //MARK: relationships
-    var presenter: ___FILEBASENAMEASIDENTIFIER___EventHandler!
+    var presenter: ___VARIABLE_productName:identifier___EventHandler!
     
-    var viewModel : ___FILEBASENAMEASIDENTIFIER___ViewModel {
+    var viewModel: ___VARIABLE_productName:identifier___ViewModel {
         get {
             return presenter.viewModel
         }
@@ -80,7 +80,7 @@ class ___FILEBASENAMEASIDENTIFIER___ViewController: UIViewController, ___FILEBAS
 
 ```swift
 
-struct ___FILEBASENAME___ViewModel
+struct ___VARIABLE_productName:identifier___ViewModel
 {
     //var title = ""
 }
@@ -93,16 +93,16 @@ struct ___FILEBASENAME___ViewModel
 ```swift
 
 // MARK: - Protocol to be defined at Presenter
-protocol ___FILEBASENAMEASIDENTIFIER___EventHandler:class
+protocol ___VARIABLE_productName:identifier___EventHandler: class
 {
-    var viewModel : ___FILEBASENAMEASIDENTIFIER___ViewModel { get }
+    var viewModel: ___VARIABLE_productName:identifier___ViewModel { get }
     
     func handleViewWillAppear()
     func handleViewWillDisappear()
 }
 
 // MARK: - Protocol to be defined at Presenter
-protocol ___FILEBASENAMEASIDENTIFIER___ResponseHandler: class
+protocol ___VARIABLE_productName:identifier___ResponseHandler: class
 {
     // func somethingRequestWillStart()
     // func somethingRequestDidStart()
@@ -114,14 +114,14 @@ protocol ___FILEBASENAMEASIDENTIFIER___ResponseHandler: class
 
 // MARK: - Presenter Class must implement Protocols to handle ViewController Events and Interactor Responses
 
-class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___EventHandler, ___FILEBASENAMEASIDENTIFIER___ResponseHandler {
+class ___VARIABLE_productName:identifier___Presenter: ___VARIABLE_productName:identifier___EventHandler, ___VARIABLE_productName:identifier___ResponseHandler {
     
     //MARK: relationships
-    weak var viewController : ___FILEBASENAMEASIDENTIFIER___ViewUpdatesHandler?
-    var interactor : ___FILEBASENAMEASIDENTIFIER___RequestHandler!
-    var wireframe : ___FILEBASENAMEASIDENTIFIER___NavigationHandler!
+    weak var viewController: ___VARIABLE_productName:identifier___ViewUpdatesHandler?
+    var interactor: ___VARIABLE_productName:identifier___RequestHandler!
+    var wireframe: ___VARIABLE_productName:identifier___NavigationHandler!
 
-    var viewModel = ___FILEBASENAMEASIDENTIFIER___ViewModel()
+    var viewModel = ___VARIABLE_productName:identifier___ViewModel()
     
     //MARK: EventsHandler Protocol
     func handleViewWillAppear() {
@@ -151,7 +151,7 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___Eve
 ```swift
 
 // MARK: - Protocol to be defined at Interactor
-protocol ___FILEBASENAMEASIDENTIFIER___RequestHandler:class
+protocol ___VARIABLE_productName:identifier___RequestHandler: class
 {
     // func requestSomething()
     // func requestUser(id:String)
@@ -159,10 +159,10 @@ protocol ___FILEBASENAMEASIDENTIFIER___RequestHandler:class
 
 
 // MARK: - Presenter Class must implement RequestHandler Protocol to handle Presenter Requests
-class ___FILEBASENAMEASIDENTIFIER___Interactor: ___FILEBASENAMEASIDENTIFIER___RequestHandler
+class ___VARIABLE_productName:identifier___Interactor: ___VARIABLE_productName:identifier___RequestHandler
 {
     //MARK: Relationships
-    weak var presenter : ___FILEBASENAMEASIDENTIFIER___ResponseHandler?
+    weak var presenter: ___VARIABLE_productName:identifier___ResponseHandler?
     
     //MARK: RequestHandler Protocol
     //func requestSomething(){}
@@ -175,15 +175,15 @@ class ___FILEBASENAMEASIDENTIFIER___Interactor: ___FILEBASENAMEASIDENTIFIER___Re
 ```swift
 
 // MARK: - Protocol to be defined at Wireframe
-protocol ___FILEBASENAMEASIDENTIFIER___NavigationHandler:class
+protocol ___VARIABLE_productName:identifier___NavigationHandler: class
 {
     // Include methods to present or dismiss
 }
 
 // MARK: - Wireframe Class must implement NavigationHandler Protocol to handle Presenter Navigation calls
-class ___FILEBASENAMEASIDENTIFIER___Wireframe: ___FILEBASENAMEASIDENTIFIER___NavigationHandler
+class ___VARIABLE_productName:identifier___Wireframe: ___VARIABLE_productName:identifier___NavigationHandler
 {
-    weak var viewController : ___FILEBASENAMEASIDENTIFIER___ViewController?
+    weak var viewController: ___VARIABLE_productName:identifier___ViewController?
 }
 
 ```
@@ -191,13 +191,13 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: ___FILEBASENAMEASIDENTIFIER___Nav
 
 
 ```swift
-class ___FILEBASENAMEASIDENTIFIER___Builder
+class ___VARIABLE_productName:identifier___Builder
 {
     static func build() -> UIViewController {
-        let viewController = ___FILEBASENAMEASIDENTIFIER___ViewController(nibName:String.init(describing: ___FILEBASENAMEASIDENTIFIER___ViewController.self), bundle: nil)
-        let presenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
-        let interactor = ___FILEBASENAMEASIDENTIFIER___Interactor()
-        let wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
+        let viewController = ___VARIABLE_productName:identifier___ViewController(nibName:String.init(describing: ___VARIABLE_productName:identifier___ViewController.self), bundle: nil)
+        let presenter = ___VARIABLE_productName:identifier___Presenter()
+        let interactor = ___VARIABLE_productName:identifier___Interactor()
+        let wireframe = ___VARIABLE_productName:identifier___Wireframe()
         
         viewController.presenter = presenter
         presenter.viewController = viewController

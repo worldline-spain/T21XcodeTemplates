@@ -7,17 +7,15 @@
 //
 //
 
-import Foundation
 import UIKit
 
-
-class ___FILEBASENAMEASIDENTIFIER___Builder
+class ___VARIABLE_productName:identifier___Builder
 {
     static func build() -> UIViewController {
-        let viewController = ___FILEBASENAMEASIDENTIFIER___View(nibName:String.init(describing: ___FILEBASENAMEASIDENTIFIER___View.self), bundle: nil)
-        let presenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
-        let interactor = ___FILEBASENAMEASIDENTIFIER___Interactor()
-        let wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
+        let viewController = ___VARIABLE_productName:identifier___View(nibName:String(describing: ___VARIABLE_productName:identifier___View.self), bundle: nil)
+        let presenter = ___VARIABLE_productName:identifier___Presenter()
+        let interactor = ___VARIABLE_productName:identifier___Interactor()
+        let wireframe = ___VARIABLE_productName:identifier___Wireframe()
         
         viewController.presenter = presenter
         presenter.viewController = viewController

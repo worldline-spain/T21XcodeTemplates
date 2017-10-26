@@ -9,12 +9,12 @@
 
 import Foundation
 
-struct ___FILEBASENAME___ViewModel
+struct ___VARIABLE_productName:identifier___ViewModel
 {
-    var items : [___FILEBASENAME___CellViewModel] = []
+    var items: [___VARIABLE_productName:identifier___CellViewModel] = []
 }
 
-struct ___FILEBASENAME___CellViewModel
+struct ___VARIABLE_productName:identifier___CellViewModel
 {
     var title = ""
 }

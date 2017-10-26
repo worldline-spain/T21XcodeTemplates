@@ -9,9 +9,9 @@
 
 import UIKit
 
-class ___FILEBASENAME___CollectionCell: UICollectionViewCell {
+class ___VARIABLE_productName:identifier___CollectionCell: UICollectionViewCell {
     
-    var viewModel = ___FILEBASENAME___CollectionCellViewModel() {
+    var viewModel = ___VARIABLE_productName:identifier___CollectionCellViewModel() {
         didSet {
             
         }
@@ -20,12 +20,6 @@ class ___FILEBASENAME___CollectionCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

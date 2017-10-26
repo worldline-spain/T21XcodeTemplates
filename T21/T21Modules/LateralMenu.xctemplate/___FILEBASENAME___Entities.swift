@@ -9,7 +9,7 @@
 
 import Foundation
 
-enum ___FILEBASENAME___ItemType : String {
+enum ___VARIABLE_productName:identifier___ItemType: String {
     case header
     case home
     case search
@@ -17,29 +17,28 @@ enum ___FILEBASENAME___ItemType : String {
     case help
 }
 
-
-class ___FILEBASENAME___ItemEntity {
-    let type : ___FILEBASENAME___ItemType
+class ___VARIABLE_productName:identifier___ItemEntity {
+    let type: ___VARIABLE_productName:identifier___ItemType
     
-    init( _ type : ___FILEBASENAME___ItemType) {
+    init( _ type: ___VARIABLE_productName:identifier___ItemType) {
         self.type = type
     }
 }
 
-class ___FILEBASENAME___SectionItemEntity : ___FILEBASENAME___ItemEntity {
-    let title : String
+class ___VARIABLE_productName:identifier___SectionItemEntity: ___VARIABLE_productName:identifier___ItemEntity {
+    let title: String
     
-    init( _ type : ___FILEBASENAME___ItemType, _ title: String) {
+    init( _ type: ___VARIABLE_productName:identifier___ItemType, _ title: String) {
         self.title = title
         super.init(type)
     }
 }
 
-class ___FILEBASENAME___HeaderItemEntity : ___FILEBASENAME___ItemEntity {
-    let title : String
-    let subtitle : String
+class ___VARIABLE_productName:identifier___HeaderItemEntity: ___VARIABLE_productName:identifier___ItemEntity {
+    let title: String
+    let subtitle: String
     
-    init( _ type : ___FILEBASENAME___ItemType, _ title: String, _ subtitle: String) {
+    init( _ type: ___VARIABLE_productName:identifier___ItemType, _ title: String, _ subtitle: String) {
         self.title = title
         self.subtitle = subtitle
         super.init(type)

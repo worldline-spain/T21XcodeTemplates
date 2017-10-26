@@ -10,8 +10,7 @@
 import Foundation
 
 // MARK: - Protocol to be defined at Interactor
-
-protocol ___FILEBASENAMEASIDENTIFIER___RequestHandler:class
+protocol ___VARIABLE_productName:identifier___RequestHandler: class
 {
     // func requestSomething()
     // func requestUser(id:String)
@@ -19,11 +18,10 @@ protocol ___FILEBASENAMEASIDENTIFIER___RequestHandler:class
     func requestItems()
 }
 
-
-class ___FILEBASENAMEASIDENTIFIER___Interactor: ___FILEBASENAMEASIDENTIFIER___RequestHandler
+class ___VARIABLE_productName:identifier___Interactor: ___VARIABLE_productName:identifier___RequestHandler
 {
     //MARK: VIPER relationships
-    weak var presenter : ___FILEBASENAMEASIDENTIFIER___ResponseHandler?
+    weak var presenter: ___VARIABLE_productName:identifier___ResponseHandler?
     
     //MARK: Private vars
     

@@ -11,14 +11,14 @@ import UIKit
 
 // MARK: - Protocol to be defined at Wireframe
 
-protocol ___FILEBASENAMEASIDENTIFIER___NavigationHandler:class
+protocol ___VARIABLE_productName:identifier___NavigationHandler: class
 {
     // Include methods to present or dismiss
 }
 
 // MARK: - Wireframe Class must implement NavigationHandler Protocol to handle Presenter Navigation requests
-class ___FILEBASENAMEASIDENTIFIER___Wireframe: ___FILEBASENAMEASIDENTIFIER___NavigationHandler
+class ___VARIABLE_productName:identifier___Wireframe: ___VARIABLE_productName:identifier___NavigationHandler
 {
-    weak var viewController : ___FILEBASENAMEASIDENTIFIER___View?
+    weak var viewController: ___VARIABLE_productName:identifier___View?
     
 }

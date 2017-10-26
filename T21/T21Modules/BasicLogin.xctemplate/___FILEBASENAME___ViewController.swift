@@ -1,9 +1,9 @@
 //
-//  ___FILEBASENAME___ViewController.swift
-//  MyApp
+//  ___FILENAME___
+//  ___PROJECTNAME___
 //
-//  Created by Eloi Guzmán Cerón on 05/07/2017.
-//  Copyright (c) 2017 Worldline. All rights reserved.
+//  Created by ___FULLUSERNAME___ on ___DATE___.
+//  Copyright (c) ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.
 //
 //
 
@@ -19,26 +19,26 @@ import RxSwift
 import T21RxAdditions
 
 // MARK: - Protocol to be defined at ViewController
-protocol ___FILEBASENAME___ViewUpdatesHandler : class
+protocol ___VARIABLE_productName:identifier___ViewUpdatesHandler: class
 {
     //That part should be implemented with RxSwift.
     func hideFeedbackLoadingError( _ message: String?)
 }
 
 // MARK: - ViewController Class must implement ViewModelHandler Protocol to handle ViewModel from Presenter
-class ___FILEBASENAME___ViewController: ScrollViewKeyboardVC, ___FILEBASENAME___ViewUpdatesHandler
+class ___VARIABLE_productName:identifier___ViewController: ScrollViewKeyboardVC, ___VARIABLE_productName:identifier___ViewUpdatesHandler
 {
     //MARK: Relationships
-    var presenter: ___FILEBASENAME___EventHandler!
+    var presenter: ___VARIABLE_productName:identifier___EventHandler!
     
-    var viewModel : ___FILEBASENAME___ViewModel {
+    var viewModel: ___VARIABLE_productName:identifier___ViewModel {
         return presenter.viewModel
     }
     @IBOutlet
-    open weak var textFieldUserName : T21MaterialTextField!
+    open weak var textFieldUserName: T21MaterialTextField!
     
     @IBOutlet
-    open weak var textFieldPassword : T21MaterialTextField!
+    open weak var textFieldPassword: T21MaterialTextField!
     
     @IBOutlet
     open weak var imageViewLogo: UIImageView!
@@ -189,7 +189,7 @@ class ___FILEBASENAME___ViewController: ScrollViewKeyboardVC, ___FILEBASENAME___
         buttonForgotPassword.setAttributedTitle(prepareLabelButtonTitle(forgotPasswordButtonCommonString,UIColor.lightGray), for: UIControlState.normal)
         buttonForgotPassword.setAttributedTitle(prepareLabelButtonTitle(forgotPasswordButtonCommonString,UIColor.black), for: UIControlState.highlighted)
         
-        let registerButtonCommonString = "todo: ___FILEBASENAME___? Create an account."
+        let registerButtonCommonString = "todo: ___VARIABLE_productName:identifier___? Create an account."
         buttonRegister.setBackgroundColor(UIColor.clear, for: UIControlState.normal)
         buttonRegister.setAttributedTitle(prepareLabelButtonTitle(registerButtonCommonString,UIColor.lightGray), for: UIControlState.normal)
         buttonRegister.setAttributedTitle(prepareLabelButtonTitle(registerButtonCommonString,UIColor.black), for: UIControlState.highlighted)

@@ -12,18 +12,18 @@ import UIKit
 
 // MARK: - Protocol to be defined at Wireframe
 
-protocol ___FILEBASENAME___NavigationHandler:class
+protocol ___VARIABLE_productName:identifier___NavigationHandler: class
 {
     // Include methods to present or dismiss
-    func showMenuType( _ type: ___FILEBASENAME___ItemType)
+    func showMenuType( _ type: ___VARIABLE_productName:identifier___ItemType)
 }
 
 // MARK: - Wireframe Class must implement NavigationHandler Protocol to handle Presenter Navigation requests
-class ___FILEBASENAME___Wireframe: ___FILEBASENAME___NavigationHandler
+class ___VARIABLE_productName:identifier___Wireframe: ___VARIABLE_productName:identifier___NavigationHandler
 {
-    weak var viewController : ___FILEBASENAME___View?
+    weak var viewController: ___VARIABLE_productName:identifier___View?
     
-    func showMenuType( _ type: ___FILEBASENAME___ItemType) {
+    func showMenuType( _ type: ___VARIABLE_productName:identifier___ItemType) {
         //todo: show the new screen using the specific type received
     }
 }

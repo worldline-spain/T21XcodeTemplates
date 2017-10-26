@@ -1,18 +1,18 @@
 //
-//  ___FILEBASENAME___Presenter.swift
-//  MyApp
+//  ___FILENAME___
+//  ___PROJECTNAME___
 //
-//  Created by Eloi Guzmán Cerón on 05/07/2017.
-//  Copyright (c) 2017 Worldline. All rights reserved.
+//  Created by ___FULLUSERNAME___ on ___DATE___.
+//  Copyright (c) ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.
 //
 //
 
 import Foundation
 
 // MARK: - Protocol to be defined at Presenter
-protocol ___FILEBASENAME___EventHandler:class
+protocol ___VARIABLE_productName:identifier___EventHandler: class
 {
-    var viewModel : ___FILEBASENAME___ViewModel { get }
+    var viewModel: ___VARIABLE_productName:identifier___ViewModel { get }
     
     func loginViewDidPressLoginButton()
     func loginViewDidPressForgotPasswordButton()
@@ -20,7 +20,7 @@ protocol ___FILEBASENAME___EventHandler:class
 }
 
 // MARK: - Protocol to be defined at Presenter
-protocol ___FILEBASENAME___ResponseHandler: class
+protocol ___VARIABLE_productName:identifier___ResponseHandler: class
 {
     func requestLoginDidStart()
     func requestLoginDidFinish(_ result: DoLoginEntity)
@@ -28,16 +28,15 @@ protocol ___FILEBASENAME___ResponseHandler: class
 
 // MARK: - Presenter Class must implement Protocols to handle ViewController Events and Interactor Responses
 
-class ___FILEBASENAME___Presenter: ___FILEBASENAME___EventHandler, ___FILEBASENAME___ResponseHandler {
+class ___VARIABLE_productName:identifier___Presenter: ___VARIABLE_productName:identifier___EventHandler, ___VARIABLE_productName:identifier___ResponseHandler {
     
     //MARK: Relationships
-    weak var viewController : ___FILEBASENAME___ViewUpdatesHandler?
-    var interactor : ___FILEBASENAME___RequestHandler!
-    var wireframe : ___FILEBASENAME___NavigationHandler!
+    weak var viewController: ___VARIABLE_productName:identifier___ViewUpdatesHandler?
+    var interactor: ___VARIABLE_productName:identifier___RequestHandler!
+    var wireframe: ___VARIABLE_productName:identifier___NavigationHandler!
 
-    var viewModel = ___FILEBASENAME___ViewModel()
+    var viewModel = ___VARIABLE_productName:identifier___ViewModel()
     
-
     //MARK: LoginViewHandler callbacks
     
     func loginViewDidPressLoginButton() {

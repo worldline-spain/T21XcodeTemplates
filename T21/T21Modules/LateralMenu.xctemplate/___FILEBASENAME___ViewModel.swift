@@ -9,22 +9,22 @@
 
 import Foundation
 
-struct ___FILEBASENAME___ViewModel
+struct ___VARIABLE_productName:identifier___ViewModel
 {
-    var menuItems : [___FILEBASENAME___CellViewModel] = []
+    var menuItems: [___VARIABLE_productName:identifier___CellViewModel] = []
 }
 
-class ___FILEBASENAME___CellViewModel
+class ___VARIABLE_productName:identifier___CellViewModel
 {
-    var type : ___FILEBASENAME___ItemType = .home
+    var type: ___VARIABLE_productName:identifier___ItemType = .home
 }
 
-class ___FILEBASENAME___ItemCellViewModel : ___FILEBASENAME___CellViewModel
+class ___VARIABLE_productName:identifier___ItemCellViewModel: ___VARIABLE_productName:identifier___CellViewModel
 {
     var title = ""
 }
 
-class ___FILEBASENAME___HeaderCellViewModel : ___FILEBASENAME___CellViewModel
+class ___VARIABLE_productName:identifier___HeaderCellViewModel: ___VARIABLE_productName:identifier___CellViewModel
 {
     var title = ""
     var subtitle = ""

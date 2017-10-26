@@ -12,18 +12,18 @@ import UIKit
 
 // MARK: - Protocol to be defined at ViewController
 
-protocol ___FILEBASENAME___ViewUpdatesHandler:class
+protocol ___VARIABLE_productName:identifier___ViewUpdatesHandler: class
 {
     
 }
 
-class ___FILEBASENAME___View: UIViewController, ___FILEBASENAME___ViewUpdatesHandler
+class ___VARIABLE_productName:identifier___View: UIViewController, ___VARIABLE_productName:identifier___ViewUpdatesHandler
 {
     //MARK: VIPER relationships
     
-    var presenter: ___FILEBASENAME___EventHandler!
+    var presenter: ___VARIABLE_productName:identifier___EventHandler!
     
-    var viewModel : ___FILEBASENAME___ViewModel {
+    var viewModel: ___VARIABLE_productName:identifier___ViewModel {
         return presenter.viewModel
     }
     

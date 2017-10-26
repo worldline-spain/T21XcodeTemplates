@@ -7,30 +7,35 @@
 //
 //
 
-import Foundation
 import UIKit
 
 // MARK: - Protocol to be defined at ViewController
-protocol ___FILEBASENAMEASIDENTIFIER___ViewUpdatesHandler:class
+protocol ___VARIABLE_productName:identifier___ViewUpdatesHandler: class
 {
     //That part should be implemented with RxSwift.
     //func updateSomeView()
 }
 
 // MARK: - ViewController Class must implement ViewModelHandler Protocol to handle ViewModel from Presenter
-class ___FILEBASENAMEASIDENTIFIER___ViewController: UIViewController, ___FILEBASENAMEASIDENTIFIER___ViewUpdatesHandler
+class ___VARIABLE_productName:identifier___ViewController: UIViewController, ___VARIABLE_productName:identifier___ViewUpdatesHandler
 {
     //MARK: Relationships
-    var presenter: ___FILEBASENAMEASIDENTIFIER___EventHandler!
+    var presenter: ___VARIABLE_productName:identifier___EventHandler!
     
-    var viewModel : ___FILEBASENAMEASIDENTIFIER___ViewModel {
+    var viewModel: ___VARIABLE_productName:identifier___ViewModel {
         return presenter.viewModel
     }
     
+    //MARK: - IBOutlets
+    
+    
+    
     //MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureBindings()
+        configureOutlets()
     }
     
     func configureBindings() {
@@ -46,4 +51,19 @@ class ___FILEBASENAMEASIDENTIFIER___ViewController: UIViewController, ___FILEBAS
         super.viewWillDisappear(animated)
         presenter.handleViewWillDisappear()
     }
+    
+    //MARK: - UI Configuration
+    
+    private func configureOutlets() {
+        
+    }
+    
+    //MARK: - ___VARIABLE_productName:identifier___ViewUpdatesHandler
+    
+    
+    
+    //MARK: - Private methods
+    
+    
+    
 }

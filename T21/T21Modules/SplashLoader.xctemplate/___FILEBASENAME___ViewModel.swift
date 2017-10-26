@@ -1,15 +1,15 @@
 //
-//  ___FILEBASENAME___ViewModel.swift
-//  MyApp
+//  ___FILENAME___
+//  ___PROJECTNAME___
 //
-//  Created by Eloi Guzmán Cerón on 04/07/2017.
-//  Copyright (c) 2017 Worldline. All rights reserved.
+//  Created by ___FULLUSERNAME___ on ___DATE___.
+//  Copyright (c) ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.
 //
 //
 
 import Foundation
 
-struct ___FILEBASENAME___ViewModel
+struct ___VARIABLE_productName:identifier___ViewModel
 {
     //var title = ""
 }

@@ -13,8 +13,8 @@ import T21Mapping
 import Result
 import Moya
 
-public func MappingJSON___FILEBASENAME___() -> Mapping<Result<Moya.Response, MoyaError>,___VARIABLE_Method___> {
-    return MappingJSONResponse({ (json: JSON) -> (___VARIABLE_Method___) in
+public func MappingJSON___VARIABLE_productName:identifier___() -> Mapping<Result<Moya.Response, MoyaError>,___VARIABLE_method:identifier___> {
+    return MappingJSONResponse({ (json: JSON) -> (___VARIABLE_method:identifier___) in
         //todo: return response
     }, mappingError: {
         //todo: return mappingError

@@ -10,11 +10,9 @@
 import Foundation
 import T21Mapping
 
-public func Mapping___FILEBASENAME___() -> Mapping<InputType,OutputType> {
+public func Mapping___VARIABLE_productName:identifier___() -> Mapping<InputType,OutputType> {
     let m: Mapping<InputType,OutputType> = Mapping({ (input) in
         
     })
     return m
 }
-
-

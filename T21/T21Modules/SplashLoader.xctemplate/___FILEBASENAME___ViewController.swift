@@ -1,9 +1,9 @@
 //
-//  ___FILEBASENAME___ViewController.swift
-//  MyApp
+//  ___FILENAME___
+//  ___PROJECTNAME___
 //
-//  Created by Eloi Guzmán Cerón on 04/07/2017.
-//  Copyright (c) 2017 Worldline. All rights reserved.
+//  Created by ___FULLUSERNAME___ on ___DATE___.
+//  Copyright (c) ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.
 //
 //
 
@@ -11,18 +11,18 @@ import Foundation
 import UIKit
 
 // MARK: - Protocol to be defined at ViewController
-protocol ___FILEBASENAME___ViewUpdatesHandler : class
+protocol ___VARIABLE_productName:identifier___ViewUpdatesHandler: class
 {
     func showLoadingFeedback(_ show: Bool)
 }
 
 // MARK: - ViewController Class must implement ViewModelHandler Protocol to handle ViewModel from Presenter
-class ___FILEBASENAME___ViewController: UIViewController, ___FILEBASENAME___ViewUpdatesHandler
+class ___VARIABLE_productName:identifier___ViewController: UIViewController, ___VARIABLE_productName:identifier___ViewUpdatesHandler
 {
     //MARK: relationships
-    var presenter: ___FILEBASENAME___EventHandler!
+    var presenter: ___VARIABLE_productName:identifier___EventHandler!
     
-    var viewModel : ___FILEBASENAME___ViewModel {
+    var viewModel: ___VARIABLE_productName:identifier___ViewModel {
         return presenter.viewModel
     }
     
@@ -64,7 +64,7 @@ class ___FILEBASENAME___ViewController: UIViewController, ___FILEBASENAME___View
         spinnerView.color = UIColor.green
     }
     
-    //MARK: ___FILEBASENAME___ViewUpdatesHandler
+    //MARK: ___VARIABLE_productName:identifier___ViewUpdatesHandler
     
     func showLoadingFeedback(_ show: Bool) {
         if show {

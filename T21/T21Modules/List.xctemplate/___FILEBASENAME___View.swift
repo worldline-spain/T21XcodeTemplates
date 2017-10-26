@@ -13,20 +13,20 @@ import T21PullToRefreshController // pod 'T21PullToRefreshController'
 
 // MARK: - Protocol to be defined at ViewController
 
-protocol ___FILEBASENAMEASIDENTIFIER___ViewUpdatesHandler:class
+protocol ___VARIABLE_productName:identifier___ViewUpdatesHandler: class
 {
     //That part should be implemented with RxSwift.
     //func updateSomeView()
     func animatePullToRefresh( _ show: Bool)
 }
 
-class ___FILEBASENAMEASIDENTIFIER___View: UIViewController, ___FILEBASENAMEASIDENTIFIER___ViewUpdatesHandler
+class ___VARIABLE_productName:identifier___View: UIViewController, ___VARIABLE_productName:identifier___ViewUpdatesHandler
 {
     //MARK: VIPER relationships
     
-    var presenter: ___FILEBASENAMEASIDENTIFIER___EventHandler!
+    var presenter: ___VARIABLE_productName:identifier___EventHandler!
     
-    var viewModel : ___FILEBASENAMEASIDENTIFIER___ViewModel {
+    var viewModel: ___VARIABLE_productName:identifier___ViewModel {
         return presenter.viewModel
     }
     

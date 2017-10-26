@@ -10,16 +10,16 @@
 import Foundation
 
 // MARK: - Protocol to be defined at Presenter
-protocol ___FILEBASENAMEASIDENTIFIER___EventHandler:class
+protocol ___VARIABLE_productName:identifier___EventHandler: class
 {
-    var viewModel : ___FILEBASENAMEASIDENTIFIER___ViewModel { get }
+    var viewModel: ___VARIABLE_productName:identifier___ViewModel { get }
     
     func handleViewWillAppear()
     func handleViewWillDisappear()
 }
 
 // MARK: - Protocol to be defined at Presenter
-protocol ___FILEBASENAMEASIDENTIFIER___ResponseHandler: class
+protocol ___VARIABLE_productName:identifier___ResponseHandler: class
 {
     // func somethingRequestWillStart()
     // func somethingRequestDidStart()
@@ -30,17 +30,16 @@ protocol ___FILEBASENAMEASIDENTIFIER___ResponseHandler: class
 }
 
 // MARK: - Presenter Class must implement Protocols to handle ViewController Events and Interactor Responses
-
-class ___FILEBASENAMEASIDENTIFIER___Presenter: ___FILEBASENAMEASIDENTIFIER___EventHandler, ___FILEBASENAMEASIDENTIFIER___ResponseHandler {
+class ___VARIABLE_productName:identifier___Presenter: ___VARIABLE_productName:identifier___EventHandler, ___VARIABLE_productName:identifier___ResponseHandler {
     
     //MARK: Relationships
-    weak var viewController : ___FILEBASENAMEASIDENTIFIER___ViewUpdatesHandler?
-    var interactor : ___FILEBASENAMEASIDENTIFIER___RequestHandler!
-    var wireframe : ___FILEBASENAMEASIDENTIFIER___NavigationHandler!
+    weak var viewController: ___VARIABLE_productName:identifier___ViewUpdatesHandler?
+    var interactor: ___VARIABLE_productName:identifier___RequestHandler!
+    var wireframe: ___VARIABLE_productName:identifier___NavigationHandler!
 
-    var viewModel = ___FILEBASENAMEASIDENTIFIER___ViewModel()
+    var viewModel = ___VARIABLE_productName:identifier___ViewModel()
     
-    //MARK: - EventsHandler Protocol
+    //MARK: - EventHandler Protocol
     func handleViewWillAppear() {
         //TODO:
     }

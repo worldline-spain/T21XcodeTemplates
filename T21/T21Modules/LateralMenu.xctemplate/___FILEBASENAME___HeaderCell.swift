@@ -9,19 +9,19 @@
 
 import UIKit
 
-protocol ___FILEBASENAME___HeaderEventHandler : class {
+protocol ___VARIABLE_productName:identifier___HeaderEventHandler: class {
     func headerButtonPressed()
 }
 
-class ___FILEBASENAME___HeaderCell: UITableViewCell {
+class ___VARIABLE_productName:identifier___HeaderCell: UITableViewCell {
     
-    @IBOutlet weak var labelTitle : UILabel?
-    @IBOutlet weak var labelSubtitle : UILabel?
-    @IBOutlet weak var button : UIButton?
-    @IBOutlet weak var headerImageView : UIImageView?
-    weak var delegate : ___FILEBASENAME___HeaderEventHandler?
+    @IBOutlet weak var labelTitle: UILabel?
+    @IBOutlet weak var labelSubtitle: UILabel?
+    @IBOutlet weak var button: UIButton?
+    @IBOutlet weak var headerImageView: UIImageView?
+    weak var delegate: ___VARIABLE_productName:identifier___HeaderEventHandler?
     
-    var viewModel = ___FILEBASENAME___HeaderCellViewModel() {
+    var viewModel = ___VARIABLE_productName:identifier___HeaderCellViewModel() {
         didSet {
             labelTitle?.text = viewModel.title
             labelSubtitle?.text = viewModel.subtitle

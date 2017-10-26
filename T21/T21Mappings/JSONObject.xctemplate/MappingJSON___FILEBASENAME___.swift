@@ -11,8 +11,8 @@ import Foundation
 import SwiftyJSON
 import T21Mapping
 
-public func MappingJSON___FILEBASENAME___() -> Mapping<JSON,MappingResult<___VARIABLE_Method___>> {
-    let m : Mapping<JSON,___VARIABLE_Method___> = Mapping({(input: JSON)->(MappingResult<___VARIABLE_Method___>) in
+public func MappingJSON___VARIABLE_productName:identifier___() -> Mapping<JSON,MappingResult<___VARIABLE_method:identifier___>> {
+    let m : Mapping<JSON,___VARIABLE_method:identifier___> = Mapping({(input: JSON)->(MappingResult<___VARIABLE_method:identifier___>) in
         if input.type == .dictionary {
             
             //todo: ...

@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="___FILEBASENAME___ViewController" customModule="MyApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="___VARIABLE_productName:identifier___ViewController" customModule="MyApp" customModuleProvider="target">
             <connections>
                 <outlet property="buttonForgotPassword" destination="Ye1-iK-Bvq" id="jE3-qV-2ao"/>
                 <outlet property="buttonLogin" destination="y5d-cY-8dY" id="dBC-xs-9LN"/>
@@ -99,7 +99,7 @@
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content=": ___FILEBASENAME___? Create a ___FILEBASENAME___ account">
+                                            <fragment content=": ___VARIABLE_productName:identifier___? Create a ___VARIABLE_productName:identifier___ account">
                                                 <attributes>
                                                     <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <font key="NSFont" size="18" name="Helvetica"/>
